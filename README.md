@@ -31,7 +31,7 @@ While Parrot is predominantly aims to be a robust text augmentor for building go
     pip install parrot
 
 ### Quickstart
-```lang-js
+```python
 var x = 10
 ```
 
