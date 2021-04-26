@@ -31,15 +31,8 @@ While Parrot is predominantly aims to be a robust text augmentor for building go
     pip install parrot
 
 ### Quickstart
-    ```lang-python
-    import parrot as pr
-    import pandas as pd
-    pd.set_option('max_colwidth', -1)
-    parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
-    phrase = ""
-    df = parrot.augment(input_phrase = phrase)
-    df.head(10)
-    ```
+```
+```
 
 ### Pretrained model
 
