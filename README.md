@@ -34,7 +34,7 @@ pip install parrot
 
 ### Quickstart
 ```python
- import parrot as pr
+ import Parrot
  import pandas as pd
  pd.set_option('max_colwidth', -1)
  parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
