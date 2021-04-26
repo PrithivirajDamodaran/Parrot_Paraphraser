@@ -17,19 +17,19 @@ A practical and feature-rich paraphraser to augment human intents in text form t
 **A good paraphraser**
 For instance, the below example preserves adequacy (in NLU context: the intent and slots are intact), fluency (grammar is fine) and offers some diversity as for as the utternace is concerned.
 
-> **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
-> **Paraphrase**: what are the round trip flights between indianapolis and orlando for the 27th
+ - > **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
+ - > **Paraphrase**: what are the round trip flights between indianapolis and orlando for the 27th
 
 **A good augmentor**
 While the above example is the strict expectation from a pure-play paraphraser, text augmenting offers some liberty.  As long as the augmentor retains the intent and grammar (with some diversity) in the paraphrases, it is acceptable even if the slots aren't intact. For instance, the below paraphrase is acceptable in an augmentor setting.
 
-> **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
-> **Paraphrase**: what are the round trip flights between chicago and orlando for the 3rd
+ - > **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
+ - > **Paraphrase**: what are the round trip flights between chicago and orlando for the 3rd
 
 **A bad augmentor**
 
-> **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
-> **Paraphrase**: what are the round trip flights between chicago and orlando for the 3rd
+ - > **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
+ - > **Paraphrase**: what are the round trip flights between chicago and orlando for the 3rd
 
 *While Parrot is predominantly aims to be a text augmentor for building good NLU models, it can also be used as a pure-play paraphraser.*
 
@@ -39,14 +39,10 @@ In the space of conversational engines, knowledge bots are to which **we ask que
 
 Parrot mainly foucses on augmenting texts typed or spoken to conversational interfaces for building robust NLU models. Hence the pretrained model is trained  on text samples of *maximum length of 64.*
 
-
-
-
 ## Installation
 ```python
 pip install parrot
 ```
-
 
 ## Quickstart
 ```python
