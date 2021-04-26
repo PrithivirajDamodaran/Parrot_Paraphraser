@@ -1,9 +1,15 @@
 
+
 # Parrot
-A realistic paraphraser to augment human intents in the form of text data to build robust NLU models for conversational bots.
+A realistic paraphraser to augment human intents in text form to build robust NLU models for conversational engines.
 
 ### Why Parrot?
-HF lists n paraphrase models, RapidAPI lists commercial paraphrasers like QuillBot, Rasa has released an experimental paraphrase for augmenting text data. In spite of all these attempts a good robust paraphraser is still 
+**Huggingface** [lists 12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** [lists 7 fremium / commercial paraphrasers like QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa [has discussed an experimental paraphraser for augmenting text data](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744). While these attempts at paraphrasing are great, still a robust paraphrasing is far from reality. Parrot is a humble attempt fill some gaps in the paraphrasing.
+
+### Scope
+In the space of conversational engines, knowledge bots are to which **we ask questions** like *"when was the berlin wall teared down?"*, transactional bots are to which **we give commands** like *"turn on the music please"* and voice assistants are the ones which can do both answer questions and action our commands. 
+
+Parrot mainly foucses on augmenting text for building robust NLU models for 
 
 ### Requirements of a Paraphraser
 [A good paraphrase should convey the same meaning as the original sentence in fluent and grammtically correct english, while being as different as possible on the surface form](https://www.aclweb.org/anthology/D10-1090.pdf). With respect to this definition, there are **3 key metrics** that measures the quality of paraphrases:
@@ -23,8 +29,6 @@ While this is the strict expectation from a pure-play paraphrase, text augmentin
 > **Paraphrase**: what are the round trip flights between chicago and orlando for the 3rd
 
 While Parrot is predominantly aims to be a robust text augmentor for building good NLU models, it can be used as both a pure-play paraphraser and an augmentor. 
-
-### Scope
 
 ### Installation
 ```python
