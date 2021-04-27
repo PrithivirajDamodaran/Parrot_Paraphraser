@@ -18,7 +18,7 @@ What is a good paraphrase ? [A good paraphrase](https://www.aclweb.org/anthology
 In the space of conversational engines, knowledge bots are to which **we ask questions** like *"when was the berlin wall teared down?"*, transactional bots are to which **we give commands** like *"turn on the music please"* and voice assistants are the ones which can do both answer questions and action our commands. Parrot mainly foucses on augmenting texts typed or spoken to conversational interfaces for building robust NLU models. Hence the pretrained model is trained  on text samples of *maximum length of 64.*
 
 
-## What makes a paraphraser a good augmentor for NLU?
+## 3. What makes a paraphraser a good augmentor for NLU?
 
 It means to take intent utternaces, augment and convert them into NLU training format goo et al or rasa format.
 
