@@ -14,12 +14,12 @@ What is a good paraphrase ? Almost all conditoned generation models are measured
 
 *Parrot offers knobs to control Adequacy, Fluency and Diversity for your needs.*
 
-## Installation
+### Installation
 ```python
 pip install parrot
 ```
 
-## Quickstart
+### Quickstart
 ```python
  import Parrot
  import pandas as pd
