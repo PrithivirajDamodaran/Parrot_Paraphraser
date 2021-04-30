@@ -1,6 +1,6 @@
 
 
-# Parrot
+# Parroto
 
 
 ## 1. Why Parrot?
