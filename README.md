@@ -14,6 +14,22 @@ What is a good paraphrase ? Almost all conditoned generation models are measured
 
 *Parrot offers knobs to control Adequacy, Fluency and Diversity for your needs.*
 
+## Installation
+```python
+pip install parrot
+```
+
+## Quickstart
+```python
+ import Parrot
+ import pandas as pd
+ pd.set_option('max_colwidth', -1)
+ parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
+ phrase = ""
+ df = parrot.augment(input_phrase = phrase)
+ df.head(df.shape[0])
+```
+
 ## 2. Scope
 
 In the space of conversational engines, knowledge bots are to which **we ask questions** like *"when was the Berlin wall teared down?"*, transactional bots are to which **we give commands** like *"Turn on the music please"* and voice assistants are the ones which can do both answer questions and action our commands. Parrot mainly foucses on augmenting texts typed-into or spoken-to conversational interfaces for building robust NLU models. (*So usually people neither type out or yell out long paragraphs to conversational interfaces. Hence the pretrained model is trained  on text samples of maximum length of 64.*)
@@ -87,22 +103,6 @@ While the above example is the strict expectation from a pure-play paraphraser, 
  - **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
  - **Paraphrase**: what are the round trip flights between chicago and orlando for the 3rd
 
-
-## Installation
-```python
-pip install parrot
-```
-
-## Quickstart
-```python
- import Parrot
- import pandas as pd
- pd.set_option('max_colwidth', -1)
- parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
- phrase = ""
- df = parrot.augment(input_phrase = phrase)
- df.head(df.shape[0])
-```
 
 ### Pretrained model
 
