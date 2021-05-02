@@ -45,15 +45,7 @@ To enable automatic training data generation, slots needs to be intact.
 
 The paraphraser outputs should be useful to create Task specific training data. Consider the examples below.
 
-
-
-```mermaid
-graph LR
-A(Utterance/Intent) --> B(paraphrase)
-B --Nx utterances--> C(NLU data)
-C(NLU data) --> D(Trainer)
-D(Trainer) --> E(Model)
-```
+<img src="./images/NLU Flow.png" alt="" title="" width="150" height="100" /> 
 
 ### Sample NLU data (Rasa format)
 
