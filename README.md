@@ -29,6 +29,18 @@ pip install parrot
  df = parrot.augment(input_phrase = phrase)
  df.head(df.shape[0])
 ```
+<pre>
+-----------------------------------------------------------------------------
+Input_phrase: What are the famous places we should not miss in Russia
+-----------------------------------------------------------------------------
+                                                                   Paraphrase  
+2                                what are the best places to visit in russia?   
+0                                 what are the top places to visit in russia?   
+1                             what are some of the must-see places in russia?   
+4  what are some of the most famous places in russia that you should not miss   
+5        what are some of the most famous places we shouldn't miss in russia?   
+3                    what are the famous places we should not miss in russia?   
+</pre>
 
 ## 2. Scope
 
