@@ -57,7 +57,7 @@ To enable automatic training data generation, slots needs to be intact.
 
 The paraphraser outputs should be useful to create Task specific training data. Consider the examples below.
 
-<img src="./images/NLU Flow.png" alt="" title="" width="700" height="500" /> 
+<img src="./images/NLU Flow.png" alt="" title="" width="400" height="200" /> 
 
 ### Sample NLU data (Rasa format)
 
