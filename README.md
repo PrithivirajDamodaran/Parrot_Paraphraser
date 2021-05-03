@@ -7,18 +7,14 @@
 **Huggingface** lists [12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** lists 7 fremium and commercial paraphrasers like [QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa has discussed an experimental paraphraser for augmenting text data [here](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744). While these attempts at paraphrasing are great, there are still some gaps and paraphrasing is NOT yet a mainstream option for text augmentation in building NLU models....Parrot is a humble attempt to fill some of these gaps.
 
 **What is a good paraphrase?** Almost all conditoned text generation models are validated  on 2 factors, (1) if the generated text conveys the same meaning as the original context (Adequacy) (2) if the text is fluent / grammtically correct english (Fluency). For instance Neural Machine Translation outputs are tested for Adequacy and Fluency. But [a good paraphrase](https://www.aclweb.org/anthology/D10-1090.pdf) should be adequate and fluent while being as different as possible on the surface lexical form. With respect to this definition, the  **3 key metrics** that measures the quality of paraphrases are:
-
  - **Adequacy** (Is the meaning preserved adequately?) 
  - **Fluency** (Is the paraphrase fluent English?) 
  - **Diversity or Lexical Dissimilarity** (How much has the paraphrase changed the original sentence?)
 
-*Parrot offers knobs to control Adequacy, Fluency and Diversity for your needs.*
+*Parrot offers knobs to control Adequacy, Fluency and Diversity as per your needs.*
 
-**What makes a paraphraser a good augmentor?**
-
-For training a NLU model we just dont need a lot of utterances but utterances with intents and slots/entities annotated. Typical flow would be:
-
- - Given an **input utterance  + input annotations** a good augmentor spits out N **output paraphrases** while preserving the intent and slots. 
+**What makes a paraphraser a good augmentor?** For training a NLU model we just dont need a lot of utterances but utterances with intents and slots/entities annotated. Typical flow would be:
+- Given an **input utterance  + input annotations** a good augmentor spits out N **output paraphrases** while preserving the intent and slots. 
  - The output paraphrases are then converted into annotated data using the input annotations that we got in step 1.
  - The annotated data created out of the output paraphrases then makes the training dataset for your NLU model.
 
