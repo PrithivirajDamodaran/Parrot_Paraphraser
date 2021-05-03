@@ -65,11 +65,11 @@ While Parrot predominantly aims to be a text augmentor for building good NLU mod
 
 To enable automatic training data generation, a paraphraser needs to keep the slots in intact. So the end to end process can take input utternaces, augment and convert them into NLU training format goo et al or rasa format (as shown below). 
 
-<img src="./images/NLU Flow.png" alt="" title="" width="700" height="100" /> 
+<img src="./images/NLU Flow.png" alt="" title="" width="600" height="100" /> 
 
 Ideally the process below needs an UI to collect to input utternaces along with annotations which then can be agumented and converted.
 
-<img src="./images/Augmentor UI.png" alt="" title="" width="400" height="100" /> 
+<img src="./images/Augmentor UI.png" alt="" title="" width="550" height="100" /> 
 
 
 ### Sample NLU data (Rasa format)
