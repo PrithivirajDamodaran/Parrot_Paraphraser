@@ -52,12 +52,14 @@ df = parrot.augment(input_phrase=phrase,
 -----------------------------------------------------------------------------
 Input_phrase: What are the famous places we should not miss in Russia
 -----------------------------------------------------------------------------
+"which are the must do places for tourists to visit in russia?",
 "what are the best places to visit in russia?",
-"what are the top places to visit in russia?",   
-"what are some of the must-see places in russia?",   
-"what are some of the most famous places in russia that you should not miss",   
-"what are some of the most famous places we shouldn't miss in russia?",   
-"what are the famous places we should not miss in russia?"   
+"what are some of the most visited sights in russia?",
+"what are some of the most beautiful places in russia that tourists should not miss?",
+"which are some of the most beautiful places to visit in russia?",
+"what are some of the most important places to visit in russia?",
+"what are some of the most famous places of russia?",
+"what are some places we should not miss in russia?"
 </pre>
 
 ## 2. Scope
