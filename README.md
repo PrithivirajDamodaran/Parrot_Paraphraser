@@ -69,11 +69,11 @@ In the space of conversational engines, knowledge bots are to which **we ask que
 
 ## 4. What makes a paraphraser a good augmentor for NLU? (Details)
 
-To enable automatic training data generation, a paraphraser needs to keep the slots in intact. So the end to end process can take input utternaces, augment and convert them into NLU training format goo et al or rasa format (as shown below). 
+To enable automatic training data generation, a paraphraser needs to keep the slots in intact. So the end to end process can take input utternaces, augment and convert them into NLU training format goo et al or rasa format (as shown below). The data generation process needs to look for the same slots in the output paraphrases to derive the start and end positions.(as shown in the json below)
 
 <img src="./images/NLU Flow.png" alt="" title="" width="550" height="100" /> 
 
-Ideally the above process needs an UI like below to collect to input utternaces along with annotations (Intents, Slots and slot types) which then can be agumented and converted to training data (as shown in the json below)
+Ideally the above process needs an UI like below to collect to input utternaces along with annotations (Intents, Slots and slot types) which then can be agumented and converted to training data.
 
 <img src="./images/Augmentor UI.png" alt="" title="" width="550" height="100" /> 
 
@@ -116,7 +116,7 @@ Ideally the above process needs an UI like below to collect to input utternaces 
 
  - **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
  - **Paraphrase useful for augmenting**: what are the round trip flights between indianapolis and orlando for the 27th
- - **Paraphrase useful for **: what are the round trip flights between chicago and orlando for the 27th.
+ - **Paraphrase not-so-useful for augmenting**: what are the round trip flights between chicago and orlando for the 27th.
 
 
 ## 5.Pretrained model
