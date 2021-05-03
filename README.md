@@ -69,7 +69,7 @@ To enable automatic training data generation, a paraphraser needs to keep the sl
 
 Ideally the process below needs an UI to collect to input utternaces along with annotations which then can be agumented and converted.
 
-<img src="./images/Augmentor UI.png" alt="" title="" width="500" height="75" /> 
+<img src="./images/Augmentor UI.png" alt="" title="" width="400" height="100" /> 
 
 
 ### Sample NLU data (Rasa format)
