@@ -43,7 +43,7 @@ parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
 phrases = ["what flights go from newark to boston after 5 pm"]
 for phrase in phrases:
   print("-"*100)
-  print(phrase)
+  print("Input_phrase: ", phrase)
   print("-"*100)
   df = parrot.augment(input_phrase=phrase, 
                       do_diverse=False, 
@@ -59,13 +59,12 @@ for phrase in phrases:
 -----------------------------------------------------------------------------
 Input_phrase: What are the famous places we should not miss in Russia
 -----------------------------------------------------------------------------
-                                                                   Paraphrase  
-2                                what are the best places to visit in russia?   
-0                                 what are the top places to visit in russia?   
-1                             what are some of the must-see places in russia?   
-4  what are some of the most famous places in russia that you should not miss   
-5        what are some of the most famous places we shouldn't miss in russia?   
-3                    what are the famous places we should not miss in russia?   
+"what are the best places to visit in russia?",
+"what are the top places to visit in russia?",   
+"what are some of the must-see places in russia?",   
+"what are some of the most famous places in russia that you should not miss",   
+"what are some of the most famous places we shouldn't miss in russia?",   
+"what are the famous places we should not miss in russia?"   
 </pre>
 
 ## 2. Scope
