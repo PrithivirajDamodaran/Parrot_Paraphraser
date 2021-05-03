@@ -40,7 +40,7 @@ warnings.filterwarnings("ignore")
 
 parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
 
-phrases = ["what flights go from newark to boston after 5 pm"]
+phrases = ["What are the famous places we should not miss in Russia?"]
 for phrase in phrases:
   print("-"*100)
   print("Input_phrase: ", phrase)
