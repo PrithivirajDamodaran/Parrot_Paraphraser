@@ -139,7 +139,7 @@ Ideally the above process needs an UI like below to collect to input utternaces 
 ###  Metrics and Comparison
 TBD
 
-### Current  Features
+### Current Features
 TBD
 
 ### Roadmap
