@@ -2,8 +2,10 @@
 
 # Parrot
 
+## 1. What is Parrot?
+Parrot is a paraphrase based utternace augmenation framework purpose built to accelerate training NLU models.
 
-## 1. Why Parrot?
+## 2. Why Parrot?
 **Huggingface** lists [12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** lists 7 fremium and commercial paraphrasers like [QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa has discussed an experimental paraphraser for augmenting text data [here](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744), Sentence-transfomers offers a [paraphrase mining utility](https://www.sbert.net/examples/applications/paraphrase-mining/README.html) and [NLPAug](https://github.com/makcedward/nlpaug) offers word level augmentation with a [PPDB](http://paraphrase.org/#/download) (a multi-million paraphrase database). While these attempts at paraphrasing are great, there are still some gaps and paraphrasing is NOT yet a mainstream option for text augmentation in building NLU models....Parrot is a humble attempt to fill some of these gaps.
 
 **What is a good paraphrase?** Almost all conditoned text generation models are validated  on 2 factors, (1) if the generated text conveys the same meaning as the original context (Adequacy) (2) if the text is fluent / grammtically correct english (Fluency). For instance Neural Machine Translation outputs are tested for Adequacy and Fluency. But [a good paraphrase](https://www.aclweb.org/anthology/D10-1090.pdf) should be adequate and fluent while being as different as possible on the surface lexical form. With respect to this definition, the  **3 key metrics** that measures the quality of paraphrases are:
@@ -58,14 +60,14 @@ Input_phrase: What are the famous places we should not miss in Russia
 
 ### Knobs
 
-## 2. Scope
+## 3. Scope
 
 In the space of conversational engines, knowledge bots are to which **we ask questions** like *"when was the Berlin wall teared down?"*, transactional bots are to which **we give commands** like *"Turn on the music please"* and voice assistants are the ones which can do both answer questions and action our commands. Parrot mainly foucses on augmenting texts typed-into or spoken-to conversational interfaces for building robust NLU models. (*So usually people neither type out or yell out long paragraphs to conversational interfaces. Hence the pretrained model is trained  on text samples of maximum length of 64.*)
 
 *While Parrot predominantly aims to be a text augmentor for building good NLU models, it can also be used as a pure-play paraphraser.*
 
 
-## 3. What makes a paraphraser a good augmentor for NLU? (Details)
+## 4. What makes a paraphraser a good augmentor for NLU? (Details)
 
 To enable automatic training data generation, a paraphraser needs to keep the slots in intact. So the end to end process can take input utternaces, augment and convert them into NLU training format goo et al or rasa format (as shown below). 
 
@@ -117,7 +119,7 @@ Ideally the above process needs an UI like below to collect to input utternaces 
  - **Paraphrase useful for **: what are the round trip flights between chicago and orlando for the 27th.
 
 
-### Pretrained model
+## 5.Pretrained model
 
  - MSRP Paraphrase 
  - Google PAWS 
