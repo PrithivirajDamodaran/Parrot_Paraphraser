@@ -36,7 +36,7 @@ warnings.filterwarnings("ignore")
 
 parrot = Parrot("prithivida/parrot_paraphraser_on_T5",use_gpu=True)
 
-phrases = "What are the famous places we should not miss in Russia?"
+phrase = "What are the famous places we should not miss in Russia?"
 print("-"*100)
 print("Input_phrase: ", phrase)
 print("-"*100)
