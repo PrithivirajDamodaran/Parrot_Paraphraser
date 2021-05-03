@@ -71,7 +71,7 @@ In the space of conversational engines, knowledge bots are to which **we ask que
 
 To enable automatic training data generation, a paraphraser needs to keep the slots in intact. So the end to end process can take input utternaces, augment and convert them into NLU training format goo et al or rasa format (as shown below). 
 
-<img src="./images/NLU Flow.png" alt="" title="" width="600" height="100" /> 
+<img src="./images/NLU Flow.png" alt="" title="" width="550" height="100" /> 
 
 Ideally the above process needs an UI like below to collect to input utternaces along with annotations (Intents, Slots and slot types) which then can be agumented and converted to training data (as shown in the json below)
 
