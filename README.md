@@ -38,7 +38,7 @@ import warnings
 pd.set_option('max_colwidth', None)
 warnings.filterwarnings("ignore")
 
-parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
+parrot = Parrot("prithivida/parrot_paraphraser_T5",use_gpu=True)
 
 phrases = ["What are the famous places we should not miss in Russia?"]
 for phrase in phrases:
