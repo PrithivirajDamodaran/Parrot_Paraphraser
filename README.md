@@ -14,7 +14,7 @@
 
 *Parrot offers knobs to control Adequacy, Fluency and Diversity for your needs.*
 
-**What is makes a paraphraser a good augmentor?**
+**What makes a paraphraser a good augmentor?**
 
 For training a NLU model we just dont need a lot of utterances but utterances with intents and slots/entities annotated. Typical flow would be:
 
@@ -23,7 +23,6 @@ For training a NLU model we just dont need a lot of utterances but utterances wi
  - The annotated data created out of the output paraphrases then makes the training dataset for your NLU model.
 
 But in general being a generative model paraphrasers doesn't guarantee to preserve the slots/entities. So the ability to generate high quality paraphrases in a constrained fashion without trading off the intents and slots for lexical dissimialrity makes a paraphraser a good augmentor. *More on this in section 3 below*
-
 
 ### Installation
 ```python
