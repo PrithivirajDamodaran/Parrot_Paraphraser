@@ -4,12 +4,12 @@
 
 
 ## 1. Why Parrot?
-**Huggingface** lists [12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** lists 7 fremium and commercial paraphrasers like [QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa has discussed an experimental paraphraser for augmenting text data [here](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744), Sentence-transfomers offers a [paraphrase mining utility](https://www.sbert.net/examples/applications/paraphrase-mining/README.html). While these attempts at paraphrasing are great, there are still some gaps and paraphrasing is NOT yet a mainstream option for text augmentation in building NLU models....Parrot is a humble attempt to fill some of these gaps.
+**Huggingface** lists [12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** lists 7 fremium and commercial paraphrasers like [QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa has discussed an experimental paraphraser for augmenting text data [here](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744), Sentence-transfomers offers a [paraphrase mining utility](https://www.sbert.net/examples/applications/paraphrase-mining/README.html) and NLPAug offers word level augmentation with a PPDB(a multi-million paraphrase database). While these attempts at paraphrasing are great, there are still some gaps and paraphrasing is NOT yet a mainstream option for text augmentation in building NLU models....Parrot is a humble attempt to fill some of these gaps.
 
 **What is a good paraphrase?** Almost all conditoned text generation models are validated  on 2 factors, (1) if the generated text conveys the same meaning as the original context (Adequacy) (2) if the text is fluent / grammtically correct english (Fluency). For instance Neural Machine Translation outputs are tested for Adequacy and Fluency. But [a good paraphrase](https://www.aclweb.org/anthology/D10-1090.pdf) should be adequate and fluent while being as different as possible on the surface lexical form. With respect to this definition, the  **3 key metrics** that measures the quality of paraphrases are:
  - **Adequacy** (Is the meaning preserved adequately?) 
  - **Fluency** (Is the paraphrase fluent English?) 
- - **Diversity or Lexical Dissimilarity** (How much has the paraphrase changed the original sentence?)
+ - **Diversity (Lexical / Phrasal / Syntactical) ** (How much has the paraphrase changed the original sentence?)
 
 *Parrot offers knobs to control Adequacy, Fluency and Diversity as per your needs.*
 
@@ -35,17 +35,11 @@ pd.set_option('max_colwidth', None)
 warnings.filterwarnings("ignore")
 
 parrot = Parrot("prithivida/parrot_paraphraser_on_T5",use_gpu=True)
-
 phrase = "What are the famous places we should not miss in Russia?"
 print("-"*100)
 print("Input_phrase: ", phrase)
 print("-"*100)
-df = parrot.augment(input_phrase=phrase, 
-                    do_diverse=False, 
-                    max_return_phrases = 10, 
-                    max_length=32, 
-                    adequacy_threshold = 0.99, 
-                    fluency_threshold = 0.90)
+df = parrot.augment(input_phrase=phrase) 
 ```
 
 <pre>
@@ -61,6 +55,8 @@ Input_phrase: What are the famous places we should not miss in Russia
 "what are some of the most famous places of russia?",
 "what are some places we should not miss in russia?"
 </pre>
+
+### Knobs
 
 ## 2. Scope
 
