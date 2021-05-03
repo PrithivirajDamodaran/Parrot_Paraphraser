@@ -67,7 +67,7 @@ To enable automatic training data generation, a paraphraser needs to keep the sl
 
 <img src="./images/NLU Flow.png" alt="" title="" width="600" height="100" /> 
 
-Ideally the process below needs an UI to collect to input utternaces along with annotations which then can be agumented and converted.
+Ideally the above process needs an UI like below to collect to input utternaces along with annotations (Intents, Slots and slot types) which then can be agumented and converted to training data (as shown in the json below)
 
 <img src="./images/Augmentor UI.png" alt="" title="" width="550" height="100" /> 
 
