@@ -40,19 +40,16 @@ warnings.filterwarnings("ignore")
 
 parrot = Parrot("prithivida/parrot_paraphraser_on_T5",use_gpu=True)
 
-phrases = ["What are the famous places we should not miss in Russia?"]
-for phrase in phrases:
-  print("-"*100)
-  print("Input_phrase: ", phrase)
-  print("-"*100)
-  df = parrot.augment(input_phrase=phrase, 
-                      do_diverse=False, 
-                      max_return_phrases = 10, 
-                      max_length=32, 
-                      adequacy_threshold = 0.99, 
-                      fluency_threshold = 0.90)
-  for index, row in df.iterrows():
-    print('"' + row["Paraphrase"] + '",')
+phrases = "What are the famous places we should not miss in Russia?"
+print("-"*100)
+print("Input_phrase: ", phrase)
+print("-"*100)
+df = parrot.augment(input_phrase=phrase, 
+                    do_diverse=False, 
+                    max_return_phrases = 10, 
+                    max_length=32, 
+                    adequacy_threshold = 0.99, 
+                    fluency_threshold = 0.90)
 ```
 
 <pre>
