@@ -108,17 +108,9 @@ Ideally the above process needs an UI like below to collect to input utternaces 
 }
 ```
 
-**A good paraphraser**
-For instance, the below example preserves adequacy (in NLU context: the intent and slots are intact), fluency (grammar is fine) and offers some diversity as for as the utternace is concerned.
-
  - **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
- - **Paraphrase**: what are the round trip flights between indianapolis and orlando for the 27th
-
-**A poor augmentor**
-While the above example is the strict expectation from a pure-play paraphraser, text augmenting offers some liberty.  As long as the augmentor retains the intent and grammar (with some diversity) in the paraphrases, it is acceptable even if the slots aren't intact. For instance, the below paraphrase is acceptable in an augmentor setting.
-
- - **Original**:  I would like a list of round trip flights between indianapolis and orlando florida for the 27th
- - **Paraphrase**: what are the round trip flights between chicago and orlando for the 3rd
+ - **Paraphrase useful for augmenting**: what are the round trip flights between indianapolis and orlando for the 27th
+ - **Paraphrase useful for **: what are the round trip flights between chicago and orlando for the 27th.
 
 
 ### Pretrained model
@@ -135,5 +127,7 @@ While the above example is the strict expectation from a pure-play paraphraser, 
 TBD
 
 ### Current Features
+TBD
 
 ### Roadmap
+TBD
