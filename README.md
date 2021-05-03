@@ -31,14 +31,30 @@ pip install parrot
 
 ### Quickstart
 ```python
- import Parrot
- import pandas as pd
- pd.set_option('max_colwidth', -1)
- parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
- phrase = ""
- df = parrot.augment(input_phrase = phrase)
- df.head(df.shape[0])
+import Parrot
+import pandas as pd
+import warnings
+
+pd.set_option('max_colwidth', None)
+warnings.filterwarnings("ignore")
+
+parrot = Parrot("prithivida/parrot_paraphraser_T5","cuda:0")
+
+phrases = ["what flights go from newark to boston after 5 pm"]
+for phrase in phrases:
+  print("-"*100)
+  print(phrase)
+  print("-"*100)
+  df = parrot.augment(input_phrase=phrase, 
+                      do_diverse=False, 
+                      max_return_phrases = 10, 
+                      max_length=32, 
+                      adequacy_threshold = 0.99, 
+                      fluency_threshold = 0.90)
+  for index, row in df.iterrows():
+    print('"' + row["Paraphrase"] + '",')
 ```
+
 <pre>
 -----------------------------------------------------------------------------
 Input_phrase: What are the famous places we should not miss in Russia
