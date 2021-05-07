@@ -4,9 +4,9 @@ class Parrot():
     from transformers import AutoTokenizer
     from transformers import AutoModelForSeq2SeqLM
     import pandas as pd
-    from filters import Adequacy
-    from filters import Fluency
-    from filters import Diversity
+    from parrot.filters import Adequacy
+    from parrot.filters import Fluency
+    from parrot.filters import Diversity
     self.tokenizer = AutoTokenizer.from_pretrained(model_tag)
     self.model     = AutoModelForSeq2SeqLM.from_pretrained(model_tag)
     if use_gpu:
