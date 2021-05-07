@@ -30,8 +30,10 @@ pip install parrot
 ### Quickstart
 ```python
 
+from parrot import Parrot
 import warnings
 warnings.filterwarnings("ignore")
+
 parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5", use_gpu=True)
 phrases = ["Can you recommed some upscale restaurants in Rome?",
            "What are the famous places we should not miss in Russia?"
