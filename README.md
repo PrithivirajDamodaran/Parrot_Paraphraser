@@ -29,36 +29,65 @@ pip install parrot
 
 ### Quickstart
 ```python
-import Parrot
-import pandas as pd
+
 import warnings
-
-pd.set_option('max_colwidth', None)
 warnings.filterwarnings("ignore")
+parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5", use_gpu=True)
+phrases = ["Can you recommed some upscale restaurants in Rome?",
+           "What are the famous places we should not miss in Russia?"
+]
 
-parrot = Parrot("prithivida/parrot_paraphraser_on_T5",use_gpu=True)
-phrase = "What are the famous places we should not miss in Russia?"
-print("-"*100)
-print("Input_phrase: ", phrase)
-print("-"*100)
-df = parrot.augment(input_phrase=phrase) 
+for phrase in phrases:
+  print("-"*100)
+  print(phrase)
+  print("-"*100)
+  para_phrases = parrot.augment(input_phrase=phrase)
+  for para_phrase in para_phrases:
+   print(para_phrase)
 ```
 
 <pre>
+
+
+-----------------------------------------------------------------------------
+Input_phrase: Can you recommed some upscale restaurants in Rome?
+-----------------------------------------------------------------------------
+"which upscale restaurants are recommended in rome?"
+"which are the best restaurants in rome?"
+"are there any upscale restaurants near rome?"
+"can you recommend a good restaurant in rome?"
+"can you recommend some of the best restaurants in rome?"
+"can you recommend some best restaurants in rome?"
+"can you recommend some upscale restaurants in rome?"
 -----------------------------------------------------------------------------
 Input_phrase: What are the famous places we should not miss in Russia
 -----------------------------------------------------------------------------
-"which are the must do places for tourists to visit in russia?",
-"what are the best places to visit in russia?",
-"what are some of the most visited sights in russia?",
-"what are some of the most beautiful places in russia that tourists should not miss?",
-"which are some of the most beautiful places to visit in russia?",
-"what are some of the most important places to visit in russia?",
-"what are some of the most famous places of russia?",
+"which are the must do places for tourists to visit in russia?"
+"what are the best places to visit in russia?"
+"what are some of the most visited sights in russia?"
+"what are some of the most beautiful places in russia that tourists should not miss?"
+"which are some of the most beautiful places to visit in russia?"
+"what are some of the most important places to visit in russia?"
+"what are some of the most famous places of russia?"
 "what are some places we should not miss in russia?"
+
 </pre>
 
 ### Knobs
+
+```python
+
+ para_phrases = parrot.augment(input_phrase=phrase, 
+                               diversity_ranker="levenshtein",
+                               do_diverse=False, 
+                               max_return_phrases = 10, 
+                               max_length=32, 
+                               adequacy_threshold = 0.99, 
+                               fluency_threshold = 0.90)
+
+```
+
+
 
 ## 3. Scope
 
