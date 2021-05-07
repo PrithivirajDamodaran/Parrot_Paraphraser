@@ -24,14 +24,16 @@ But in general being a generative model paraphrasers doesn't guarantee to preser
 
 ### Installation
 ```python
-pip install parrot
+pip install git+https://github.com/PrithivirajDamodaran/Parrot.git
 ```
 
 ### Quickstart
 ```python
 
+from parrot import Parrot
 import warnings
 warnings.filterwarnings("ignore")
+
 parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5", use_gpu=True)
 phrases = ["Can you recommed some upscale restaurants in Rome?",
            "What are the famous places we should not miss in Russia?"
