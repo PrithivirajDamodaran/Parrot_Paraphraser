@@ -1,6 +1,6 @@
 class Parrot():
   
-  def __init__(self, model_tag="./models/parrot_paraphraser_on_T5", use_gpu=False):
+  def __init__(self, diversity_ranker="levenshtein", model_tag="./models/parrot_paraphraser_on_T5", use_gpu=False):
     from transformers import AutoTokenizer
     from transformers import AutoModelForSeq2SeqLM
     import pandas as pd
@@ -18,9 +18,9 @@ class Parrot():
     self.model     = self.model.to(device)
     self.adequacy_score = Adequacy()
     self.fluency_score  = Fluency()
-    self.diversity_score= Diversity()
+    self.diversity_score= Diversity(diversity_ranker)
 
-  def rephrase(self, input_phrase, diversity_ranker='levenshtein', do_diverse=False, style=1, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
+  def rephrase(self, input_phrase, do_diverse=False, style=1, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
       import re
       input_phrase = re.sub('[^a-zA-Z0-9 \?\'\-\/\:\.]', '', input_phrase)
       input_phrase = "paraphrase: " + input_phrase
@@ -64,7 +64,7 @@ class Parrot():
       if len(adequacy_filtered_phrases) > 0 :
         fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold)
         if len(fluency_filtered_phrases) > 0 :
-            diversity_scored_phrases = self.diversity_score.rank(input_phrase, fluency_filtered_phrases, diversity_ranker)
+            diversity_scored_phrases = self.diversity_score.rank(input_phrase, fluency_filtered_phrases)
             para_phrases = []
             for para_phrase, diversity_score in diversity_scored_phrases.items():
                 para_phrases.append((para_phrase, diversity_score))
@@ -73,7 +73,7 @@ class Parrot():
         else:
             return [input_phrase]
 
-  def augment(self, input_phrase, diversity_ranker='levenshtein', do_diverse=False, max_return_phrases = 10, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
+  def augment(self, input_phrase, do_diverse=False, max_return_phrases = 10, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
       import re
 
       input_phrase = re.sub('[^a-zA-Z0-9 \?\'\-\/\:\.]', '', input_phrase)
@@ -118,7 +118,7 @@ class Parrot():
       if len(adequacy_filtered_phrases) > 0 :
         fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold)
         if len(fluency_filtered_phrases) > 0 :
-            diversity_scored_phrases = self.diversity_score.rank(input_phrase, fluency_filtered_phrases, diversity_ranker)
+            diversity_scored_phrases = self.diversity_score.rank(input_phrase, fluency_filtered_phrases)
             para_phrases = []
             for para_phrase, diversity_score in diversity_scored_phrases.items():
                 para_phrases.append((para_phrase, diversity_score))

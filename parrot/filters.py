@@ -74,10 +74,10 @@ class Fluency():
 
 class Diversity():
 
-  def __init__(self, ranker='levenshtein', model_tag='paraphrase-distilroberta-base-v1'):
+  def __init__(self, diversity_ranker='levenshtein', model_tag='paraphrase-distilroberta-base-v1'):
     from sentence_transformers import SentenceTransformer
     self.diversity_model = SentenceTransformer(model_tag)
-    self.type = ranker
+    self.type = diversity_ranker
 
   def rank(self, input_phrase, para_phrases):
       if self.type == "levenshtein":
