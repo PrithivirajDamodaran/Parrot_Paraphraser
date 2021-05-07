@@ -74,17 +74,16 @@ class Fluency():
 
 class Diversity():
 
-  def __init__(self, diversity_ranker='levenshtein', model_tag='paraphrase-distilroberta-base-v1'):
+  def __init__(self, model_tag='paraphrase-distilroberta-base-v1'):
     from sentence_transformers import SentenceTransformer
     self.diversity_model = SentenceTransformer(model_tag)
-    self.type = diversity_ranker
 
-  def rank(self, input_phrase, para_phrases):
-      if self.type == "levenshtein":
+  def rank(self, input_phrase, para_phrases, diversity_ranker='levenshtein'):
+      if diversity_ranker == "levenshtein":
         return self.levenshtein_ranker(input_phrase, para_phrases)
-      elif self.type == "euclidean":
+      elif diversity_ranker == "euclidean":
         return self.euclidean_ranker(input_phrase, para_phrases)
-      elif self.type == "diff":
+      elif diversity_ranker == "diff":
         return self.diff_ranker(input_phrase, para_phrases)
 
   def euclidean_ranker(self, input_phrase, para_phrases):
