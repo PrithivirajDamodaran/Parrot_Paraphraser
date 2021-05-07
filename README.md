@@ -30,18 +30,22 @@ pip install git+https://github.com/PrithivirajDamodaran/Parrot.git
 ### Quickstart
 ```python
 
+# Caveat: the generate part is NOT seeded, so for a same input, multiple runs will produce DIFFERENT outputs for now
+
 from parrot import Parrot
 import warnings
 warnings.filterwarnings("ignore")
 
+#Init models (make sure you init ONLY once if you integrate this to your code)
 parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5", use_gpu=False)
+
 phrases = ["Can you recommed some upscale restaurants in Rome?",
            "What are the famous places we should not miss in Russia?"
 ]
 
 for phrase in phrases:
   print("-"*100)
-  print(phrase)
+  print("Input_phrase: ", phrase)
   print("-"*100)
   para_phrases = parrot.augment(input_phrase=phrase)
   for para_phrase in para_phrases:
@@ -49,8 +53,6 @@ for phrase in phrases:
 ```
 
 <pre>
-
-
 -----------------------------------------------------------------------------
 Input_phrase: Can you recommed some upscale restaurants in Rome?
 -----------------------------------------------------------------------------
@@ -72,7 +74,6 @@ Input_phrase: What are the famous places we should not miss in Russia
 "what are some of the most important places to visit in russia?"
 "what are some of the most famous places of russia?"
 "what are some places we should not miss in russia?"
-
 </pre>
 
 ### Knobs
