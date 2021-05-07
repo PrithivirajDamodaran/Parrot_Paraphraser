@@ -1,6 +1,6 @@
 class Adequacy():
   
-  def __init__(self, model_tag='./models/adequacy'):
+  def __init__(self, model_tag='facebook/bart-large-mnli'):
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
     self.nli_model = AutoModelForSequenceClassification.from_pretrained(model_tag)
     self.tokenizer = AutoTokenizer.from_pretrained(model_tag)
@@ -35,7 +35,7 @@ class Adequacy():
       return adequacy_scores
 
 class Fluency():
-  def __init__(self, model_tag='./models/fluency'):
+  def __init__(self, model_tag='textattack/bert-base-uncased-CoLA'):
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
     self.cola_model = AutoModelForSequenceClassification.from_pretrained(model_tag, num_labels=2)
     self.cola_tokenizer = AutoTokenizer.from_pretrained(model_tag)
@@ -74,7 +74,7 @@ class Fluency():
 
 class Diversity():
 
-  def __init__(self, model_tag='./models/distilroberta-base-v1'):
+  def __init__(self, model_tag='paraphrase-distilroberta-base-v1'):
     from sentence_transformers import SentenceTransformer
     self.diversity_model = SentenceTransformer(model_tag)
 
