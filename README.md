@@ -24,7 +24,7 @@ But in general being a generative model paraphrasers doesn't guarantee to preser
 
 ### Installation
 ```python
-pip install parrot
+pip install git+https://github.com/PrithivirajDamodaran/Parrot.git
 ```
 
 ### Quickstart
