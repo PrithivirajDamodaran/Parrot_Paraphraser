@@ -150,7 +150,9 @@ Ideally the above process needs an UI like below to collect to input utternaces 
  - **Paraphrase not-so-useful for augmenting**: what are the round trip flights between chicago and orlando for the 27th.
 
 
-## 5.Pretrained model
+## 5.Dataset for paraphrase model
+
+The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fine tuned on the following datasets.
 
  - MSRP Paraphrase 
  - Google PAWS 
