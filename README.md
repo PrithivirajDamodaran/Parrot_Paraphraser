@@ -76,8 +76,38 @@ Input_phrase: What are the famous places we should not miss in Russia
 "what are some places we should not miss in russia?"
 </pre>
 
-### Knobs
+### How to get syntatic and phrasal diversity / variety in your paraphrases using parrot? 
+Set **do_diverse to True**, for example
 
+do_diverse = False (default)
+-----------------------------------------------------------------------------
+Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
+-----------------------------------------------------------------------------
+'the final test of knowledge is your capacity to impart it '
+'the ultimate test of a person's knowledge is his ability to transmit it to another '
+'the ultimate test of knowledge is the ability to communicate it to another '
+'the ultimate test of knowledge is your ability to communicate it to others '
+'the test of your knowledge is your capacity to communicate it to others '
+'the ultimate test for knowledge is the capacity to show it to another '
+'the ultimate test of your knowledge is your ability to transmit to others '
+'the ultimate test of a knowledge is your capacity to communicate it to another '
+'the ultimate test of knowledge is your capacity to transmit it to another '
+'the final test of your knowledge is your ability to convey it to another '
+**do_diverse = True (default)**
+-----------------------------------------------------------------------------
+Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
+-----------------------------------------------------------------------------
+'one of the ultimate tests of knowledge is your ability to communicate it to another person '
+'one of the ultimate tests of knowledge is your ability to transmit it to another person '
+'one of the ultimate tests of knowledge is your ability to communicate it to another '
+'one of the greatest tests of knowledge is your ability to convey it to another '
+'one of the ultimate tests of knowledge is your ability to transmit it to another '
+'one of the ultimate tests of knowledge is your ability to convey it to another person '
+'one of the ultimate tests of knowledge is the ability to convey it to another '
+'the ultimate test of your knowledge is your ability to communicate it to another '
+'the ultimate test of your knowledge is your ability to transmit it to another '
+
+### Other Knobs
 ```python
 
  para_phrases = parrot.augment(input_phrase=phrase, 
@@ -89,7 +119,6 @@ Input_phrase: What are the famous places we should not miss in Russia
                                fluency_threshold = 0.90)
 
 ```
-
 
 ## 3. Scope
 
@@ -170,3 +199,7 @@ TBD
 
 ### Roadmap
 TBD
+
+### Current Limitations
+TBD
+
