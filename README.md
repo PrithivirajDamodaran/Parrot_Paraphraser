@@ -52,7 +52,7 @@ for phrase in phrases:
   for para_phrase in para_phrases:
    print(para_phrase)
 ```
-```python
+```
 ----------------------------------------------------------------------
 Input_phrase: Can you recommed some upscale restaurants in Rome?
 ----------------------------------------------------------------------
@@ -74,13 +74,12 @@ Input_phrase: What are the famous places we should not miss in Russia
 "what are some of the most important places to visit in russia?"
 "what are some of the most famous places of russia?"
 "what are some places we should not miss in russia?"
-</pre>
 ```
 ### How to get syntatic and phrasal diversity / variety in your paraphrases using parrot? 
 
 Set  do_diverse to True , for example
-```python
 **do_diverse = False (default)***
+```
 ------------------------------------------------------------------------------
 Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
 ------------------------------------------------------------------------------
@@ -94,7 +93,9 @@ Input_phrase: The ultimate test of your knowledge is your capacity to convey it 
 'the ultimate test of a knowledge is your capacity to communicate it to another '
 'the ultimate test of knowledge is your capacity to transmit it to another '
 'the final test of your knowledge is your ability to convey it to another '
+```
 **do_diverse = True**
+```
 ------------------------------------------------------------------------------
 Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
 ------------------------------------------------------------------------------
