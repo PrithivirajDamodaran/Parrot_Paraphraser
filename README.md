@@ -93,7 +93,7 @@ Input_phrase: The ultimate test of your knowledge is your capacity to convey it 
 'the ultimate test of a knowledge is your capacity to communicate it to another '
 'the ultimate test of knowledge is your capacity to transmit it to another '
 'the final test of your knowledge is your ability to convey it to another '
-**do_diverse = True (default)**
+do_diverse = True
 -----------------------------------------------------------------------------
 Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
 -----------------------------------------------------------------------------
