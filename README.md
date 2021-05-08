@@ -31,11 +31,19 @@ pip install git+https://github.com/PrithivirajDamodaran/Parrot.git
 ### Quickstart
 ```python
 
-# Caveat: the generate part is NOT seeded, so for a same input, multiple runs will produce DIFFERENT outputs for now
 
 from parrot import Parrot
+import torch
 import warnings
 warnings.filterwarnings("ignore")
+
+
+def set_seed(seed):
+  torch.manual_seed(seed)
+  if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(seed)
+
+set_seed(42)
 
 #Init models (make sure you init ONLY once if you integrate this to your code)
 parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5", use_gpu=False)
@@ -52,6 +60,7 @@ for phrase in phrases:
   for para_phrase in para_phrases:
    print(para_phrase)
 ```
+
 ```
 ----------------------------------------------------------------------
 Input_phrase: Can you recommed some upscale restaurants in Rome?
@@ -77,8 +86,7 @@ Input_phrase: What are the famous places we should not miss in Russia
 ```
 ### How to get syntatic and phrasal diversity / variety in your paraphrases using parrot? 
 
-Set  do_diverse to True , for example
-**do_diverse = False (default)***
+You can play with do_diverse knob. Consider this example: **do_diverse = False (default)***
 ```
 ------------------------------------------------------------------------------
 Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
