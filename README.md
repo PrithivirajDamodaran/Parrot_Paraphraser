@@ -1,5 +1,6 @@
 
 
+
 # Parrot
 
 ## 1. What is Parrot?
@@ -51,11 +52,9 @@ for phrase in phrases:
   for para_phrase in para_phrases:
    print(para_phrase)
 ```
-
-<pre>
------------------------------------------------------------------------------
+................................................................................................................................................
 Input_phrase: Can you recommed some upscale restaurants in Rome?
------------------------------------------------------------------------------
+................................................................................................................................................
 "which upscale restaurants are recommended in rome?"
 "which are the best restaurants in rome?"
 "are there any upscale restaurants near rome?"
@@ -63,9 +62,9 @@ Input_phrase: Can you recommed some upscale restaurants in Rome?
 "can you recommend some of the best restaurants in rome?"
 "can you recommend some best restaurants in rome?"
 "can you recommend some upscale restaurants in rome?"
------------------------------------------------------------------------------
+................................................................................................................................................
 Input_phrase: What are the famous places we should not miss in Russia
------------------------------------------------------------------------------
+................................................................................................................................................
 "which are the must do places for tourists to visit in russia?"
 "what are the best places to visit in russia?"
 "what are some of the most visited sights in russia?"
@@ -77,12 +76,13 @@ Input_phrase: What are the famous places we should not miss in Russia
 </pre>
 
 ### How to get syntatic and phrasal diversity / variety in your paraphrases using parrot? 
-Set **do_diverse to True**, for example
 
-do_diverse = False (default)
------------------------------------------------------------------------------
+Set  do_diverse to True , for example
+
+**do_diverse = False (default)***
+.....................................................................................................................................................................................
 Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
------------------------------------------------------------------------------
+.....................................................................................................................................................................................
 'the final test of knowledge is your capacity to impart it '
 'the ultimate test of a person's knowledge is his ability to transmit it to another '
 'the ultimate test of knowledge is the ability to communicate it to another '
@@ -93,10 +93,10 @@ Input_phrase: The ultimate test of your knowledge is your capacity to convey it 
 'the ultimate test of a knowledge is your capacity to communicate it to another '
 'the ultimate test of knowledge is your capacity to transmit it to another '
 'the final test of your knowledge is your ability to convey it to another '
-do_diverse = True
------------------------------------------------------------------------------
+**do_diverse = True**
+.....................................................................................................................................................................................
 Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
------------------------------------------------------------------------------
+.....................................................................................................................................................................................
 'one of the ultimate tests of knowledge is your ability to communicate it to another person '
 'one of the ultimate tests of knowledge is your ability to transmit it to another person '
 'one of the ultimate tests of knowledge is your ability to communicate it to another '
@@ -202,4 +202,3 @@ TBD
 
 ### Current Limitations
 TBD
-
