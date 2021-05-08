@@ -84,9 +84,10 @@ Input_phrase: What are the famous places we should not miss in Russia
 "what are some of the most famous places of russia?"
 "what are some places we should not miss in russia?"
 ```
-### How to get syntatic and phrasal diversity / variety in your paraphrases using parrot? 
+### How to get syntactic and phrasal diversity/variety in your paraphrases using parrot? 
 
-You can play with do_diverse knob. Consider this example: **do_diverse = False (default)***
+You can play with the do_diverse knob (checkout the next section for more knobs). 
+Consider this example: **do_diverse = False (default)***
 ```
 ------------------------------------------------------------------------------
 Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
