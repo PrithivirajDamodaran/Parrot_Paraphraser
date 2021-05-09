@@ -22,6 +22,7 @@ class Parrot():
 
   def rephrase(self, input_phrase, diversity_ranker="levenshtein", do_diverse=False, style=1, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
       import re
+      save_phrase = input_phrase
       input_phrase = re.sub('[^a-zA-Z0-9 \?\'\-\/\:\.]', '', input_phrase)
       input_phrase = "paraphrase: " + input_phrase
       input_ids = self.tokenizer.encode(input_phrase, return_tensors='pt')
@@ -31,7 +32,7 @@ class Parrot():
         for n in range(2, 9):
           if max_return_phrases % n == 0:
             break 
-        print("max_return_phrases - ", max_return_phrases , " and beam groups -", n)            
+        #print("max_return_phrases - ", max_return_phrases , " and beam groups -", n)            
         preds = self.model.generate(
               input_ids,
               do_sample=False, 
@@ -69,16 +70,13 @@ class Parrot():
             for para_phrase, diversity_score in diversity_scored_phrases.items():
                 para_phrases.append((para_phrase, diversity_score))
             para_phrases.sort(key=lambda x:x[1], reverse=True)
-            if len(para_phrases) == 1:
-               if len(para_phrases[0]) <= 2:
-                  return [input_phrase]
-               return para_phrases[0]
+            return para_phrases[0]
         else:
-            return [input_phrase]
+            return [(save_phrase,0)]
 
   def augment(self, input_phrase, diversity_ranker="levenshtein", do_diverse=False, max_return_phrases = 10, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
       import re
-
+      save_phrase = input_phrase	
       input_phrase = re.sub('[^a-zA-Z0-9 \?\'\-\/\:\.]', '', input_phrase)
       input_phrase = "paraphrase: " + input_phrase
       input_ids = self.tokenizer.encode(input_phrase, return_tensors='pt')
@@ -88,7 +86,7 @@ class Parrot():
         for n in range(2, 9):
           if max_return_phrases % n == 0:
             break 
-        print("max_return_phrases - ", max_return_phrases , " and beam groups -", n)            
+        #print("max_return_phrases - ", max_return_phrases , " and beam groups -", n)            
         preds = self.model.generate(
               input_ids,
               do_sample=False, 
@@ -126,12 +124,9 @@ class Parrot():
             for para_phrase, diversity_score in diversity_scored_phrases.items():
                 para_phrases.append((para_phrase, diversity_score))
             para_phrases.sort(key=lambda x:x[1], reverse=True)
-            if len(para_phrases) == 1:
-               if len(para_phrases[0]) <= 2:
-                  return [input_phrase]
             return para_phrases
         else:
-            return [input_phrase]
+            return [(save_phrase,0)]
 
 
 
