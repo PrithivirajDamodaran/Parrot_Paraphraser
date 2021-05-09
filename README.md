@@ -92,33 +92,27 @@ You can play with the do_diverse knob (checkout the next section for more knobs)
 Consider this example: **do_diverse = False (default)***
 ```
 ------------------------------------------------------------------------------
-Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
+Input_phrase: How are the new Macbook Pros with M1 chips?
 ------------------------------------------------------------------------------
-'the final test of knowledge is your capacity to impart it '
-'the ultimate test of a person's knowledge is his ability to transmit it to another '
-'the ultimate test of knowledge is the ability to communicate it to another '
-'the ultimate test of knowledge is your ability to communicate it to others '
-'the test of your knowledge is your capacity to communicate it to others '
-'the ultimate test for knowledge is the capacity to show it to another '
-'the ultimate test of your knowledge is your ability to transmit to others '
-'the ultimate test of a knowledge is your capacity to communicate it to another '
-'the ultimate test of knowledge is your capacity to transmit it to another '
-'the final test of your knowledge is your ability to convey it to another '
+'how do you rate the new macbook pros? '
+'how are the new macbook pros? '
+'how is the new macbook pro doing with new chips? '
+'how do you like the new macbook pro m1 chip? '
+'what is the use of the new macbook pro m1 chips? '
 ```
 **do_diverse = True**
 ```
 ------------------------------------------------------------------------------
-Input_phrase: The ultimate test of your knowledge is your capacity to convey it to another.
+Input_phrase: How are the new Macbook Pros with M1 chips?
 ------------------------------------------------------------------------------
-'one of the ultimate tests of knowledge is your ability to communicate it to another person '
-'one of the ultimate tests of knowledge is your ability to transmit it to another person '
-'one of the ultimate tests of knowledge is your ability to communicate it to another '
-'one of the greatest tests of knowledge is your ability to convey it to another '
-'one of the ultimate tests of knowledge is your ability to transmit it to another '
-'one of the ultimate tests of knowledge is your ability to convey it to another person '
-'one of the ultimate tests of knowledge is the ability to convey it to another '
-'the ultimate test of your knowledge is your ability to communicate it to another '
-'the ultimate test of your knowledge is your ability to transmit it to another '
+'what do you think about the new macbook pro m1? '
+'how is the new macbook pro m1? '
+'how are the new macbook pros? '
+'what do you think about the new macbook pro m1 chips? '
+'how good is the new macbook pro m1 chips? '
+'how is the new macbook pro m1 chip? '
+'do you like the new macbook pro m1 chips? '
+'how are the new macbook pros with m1 chips? '
 ```
 
 ### Other Knobs
