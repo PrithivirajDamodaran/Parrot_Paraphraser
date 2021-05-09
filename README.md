@@ -50,7 +50,7 @@ random_state(1234)
 #Init models (make sure you init ONLY once if you integrate this to your code)
 parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5", use_gpu=False)
 
-phrases = ["Can you recommed some upscale restaurants in Rome?",
+phrases = ["Can you recommed some upscale restaurants in Newyork?",
            "What are the famous places we should not miss in Russia?"
 ]
 
@@ -65,15 +65,15 @@ for phrase in phrases:
 
 ```
 ----------------------------------------------------------------------
-Input_phrase: Can you recommed some upscale restaurants in Rome?
+Input_phrase: Can you recommed some upscale restaurants in Newyork?
 ----------------------------------------------------------------------
-"which upscale restaurants are recommended in rome?"
-"which are the best restaurants in rome?"
-"are there any upscale restaurants near rome?"
-"can you recommend a good restaurant in rome?"
-"can you recommend some of the best restaurants in rome?"
-"can you recommend some best restaurants in rome?"
-"can you recommend some upscale restaurants in rome?"
+list some excellent restaurants to visit in new york city?
+what upscale restaurants do you recommend in new york?
+i want to try some upscale restaurants in new york?
+recommend some upscale restaurants in newyork?
+can you recommend some high end restaurants in newyork?
+can you recommend some upscale restaurants in new york?
+can you recommend some upscale restaurants in newyork?
 ----------------------------------------------------------------------
 Input_phrase: What are the famous places we should not miss in Russia
 ----------------------------------------------------------------------
