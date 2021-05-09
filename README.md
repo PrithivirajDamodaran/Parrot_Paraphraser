@@ -214,5 +214,8 @@ TBD
 ### Roadmap
 TBD
 
-### Current Limitations
-TBD
+### Current Limitations/Known issues
+<ul>
+ <li> The diversity scores are not normalised each of the diversity rankers scores paraphrases differently </li>
+ <li> Some command style input phrases generate less adequate paraphrases</li>
+</ul>
