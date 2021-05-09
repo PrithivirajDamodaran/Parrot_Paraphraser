@@ -77,14 +77,12 @@ can you recommend some upscale restaurants in newyork?
 ----------------------------------------------------------------------
 Input_phrase: What are the famous places we should not miss in Russia
 ----------------------------------------------------------------------
-"which are the must do places for tourists to visit in russia?"
-"what are the best places to visit in russia?"
-"what are some of the most visited sights in russia?"
-"what are some of the most beautiful places in russia that tourists should not miss?"
-"which are some of the most beautiful places to visit in russia?"
-"what are some of the most important places to visit in russia?"
-"what are some of the most famous places of russia?"
-"what are some places we should not miss in russia?"
+what should we not miss when visiting russia?
+recommend some of the best places to visit in russia?
+list some of the best places to visit in russia?
+can you list the top places to visit in russia?
+show the places that we should not miss in russia?
+list some famous places which we should not miss in russia?
 ```
 ### How to get syntactic and phrasal diversity/variety in your paraphrases using parrot? 
 
