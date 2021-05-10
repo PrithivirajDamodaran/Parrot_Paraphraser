@@ -195,7 +195,6 @@ The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fin
  - Quora question pairs. 
  - SNIPS Alexa commands
  - MSRP Frames
- - GYAFC Dataset
 
 ###  Metrics and Comparison
 TBD
