@@ -8,7 +8,7 @@ for phrase in phrases:
   print(phrase)
   print("-"*100)
   para_phrases = parrot.augment(input_phrase=phrase, 
-                                diversity_ranker="levenshtein"
+                                diversity_ranker="levenshtein",
                                 do_diverse=False, 
                                 max_return_phrases = 10, 
                                 max_length=32, 
