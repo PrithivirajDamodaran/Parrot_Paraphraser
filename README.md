@@ -3,7 +3,8 @@
 Parrot is a paraphrase based utterance augmentation framework purpose built to accelerate training NLU models. A paraphrase framework is more than just a paraphrasing model.
 
 ## Table of contents
-- [2. Why Parrot?](#2-why-parrot-)
+- [1. Why Parrot?](#1-why-parrot-)
+- [2. Getting started](#2-getting-started)
   * [Install](#install)
   * [Quickstart](#quickstart)
   * [How to get syntactic and phrasal diversity/variety in your paraphrases using parrot?](#how-to-get-syntactic-and-phrasal-diversity-variety-in-your-paraphrases-using-parrot-)
@@ -12,12 +13,13 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 - [4. What makes a paraphraser a good augmentor for NLU? (Details)](#4-what-makes-a-paraphraser-a-good-augmentor-for-nlu---details-)
   * [Sample NLU data (Rasa format)](#sample-nlu-data--rasa-format-)
 - [5.Dataset for paraphrase model](#5dataset-for-paraphrase-model)
-- [Metrics and Comparison](#metrics-and-comparison)
-- [Current Features](#current-features)
-- [Roadmap](#roadmap)
-- [Current Limitations/Known issues](#current-limitations-known-issues)
-- [References](#references)
-- [How to cite?](#how-to-cite-)
+- [6.Metrics and Comparison](#6metrics-and-comparison)
+- [7.Current Features](#7current-features)
+- [8.Roadmap](#8roadmap)
+- [9.Current Limitations/Known issues](#9current-limitations-known-issues)
+- [10.References](#10references)
+- [11.Citation](#11citation)
+
 
 ## 1. Why Parrot?
 **Huggingface** lists [12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** lists 7 fremium and commercial paraphrasers like [QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa has discussed an experimental paraphraser for augmenting text data [here](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744), Sentence-transfomers offers a [paraphrase mining utility](https://www.sbert.net/examples/applications/paraphrase-mining/README.html) and [NLPAug](https://github.com/makcedward/nlpaug) offers word level augmentation with a [PPDB](http://paraphrase.org/#/download) (a multi-million paraphrase database). While these attempts at paraphrasing are great, there are still some gaps and paraphrasing is NOT yet a mainstream option for text augmentation in building NLU models....Parrot is a humble attempt to fill some of these gaps.
