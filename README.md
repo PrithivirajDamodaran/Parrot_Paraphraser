@@ -3,6 +3,10 @@
 
 # Parrot
 
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+
 ## 1. What is Parrot?
 Parrot is a paraphrase based utterance augmentation framework purpose built to accelerate training NLU models. A paraphrase framework is more than just a paraphrasing model.
 
