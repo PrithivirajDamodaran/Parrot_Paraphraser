@@ -104,7 +104,7 @@ can you list the top places to visit in russia?
 show the places that we should not miss in russia?
 list some famous places which we should not miss in russia?
 ```
-### How to get syntactic and phrasal diversity/variety in your paraphrases using parrot? 
+### Getting syntactic and phrasal diversity/variety in your paraphrases ?
 
 You can play with the do_diverse knob (checkout the next section for more knobs). 
 Consider this example: **do_diverse = False (default)***
