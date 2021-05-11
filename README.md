@@ -1,4 +1,8 @@
-- [1. What is Parrot?](#1-what-is-parrot-)
+
+## Parrot
+Parrot is a paraphrase based utterance augmentation framework purpose built to accelerate training NLU models. A paraphrase framework is more than just a paraphrasing model.
+
+## Table of contents
 - [2. Why Parrot?](#2-why-parrot-)
   * [Install](#install)
   * [Quickstart](#quickstart)
@@ -14,12 +18,6 @@
 - [Current Limitations/Known issues](#current-limitations-known-issues)
 - [References](#references)
 - [How to cite?](#how-to-cite-)
-
-
-
-
-## 1. What is Parrot?
-Parrot is a paraphrase based utterance augmentation framework purpose built to accelerate training NLU models. A paraphrase framework is more than just a paraphrasing model.
 
 ## 2. Why Parrot?
 **Huggingface** lists [12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** lists 7 fremium and commercial paraphrasers like [QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa has discussed an experimental paraphraser for augmenting text data [here](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744), Sentence-transfomers offers a [paraphrase mining utility](https://www.sbert.net/examples/applications/paraphrase-mining/README.html) and [NLPAug](https://github.com/makcedward/nlpaug) offers word level augmentation with a [PPDB](http://paraphrase.org/#/download) (a multi-million paraphrase database). While these attempts at paraphrasing are great, there are still some gaps and paraphrasing is NOT yet a mainstream option for text augmentation in building NLU models....Parrot is a humble attempt to fill some of these gaps.
