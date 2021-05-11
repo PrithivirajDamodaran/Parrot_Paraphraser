@@ -244,6 +244,6 @@ To cite Parrot in your work, please use the following bibtex reference:
   author       = {Prithiviraj Damodaran},
   title        = {Parrot: Paraphrase generation for NLU.},
   year         = 2021,
-  version      = {v1.0},
+  version      = {v1.0}
 }
 ```
