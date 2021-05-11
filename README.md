@@ -3,9 +3,27 @@
 
 # Parrot
 
-##### Table of Contents  
-[1. What is Parrot?](#1. What is Parrot?)  
-[2. Why Parrot?](#2. Why Parrot?)  
+- [Parrot](#parrot)
+        * [Table of Contents](#table-of-contents)
+  * [1. What is Parrot?](#1-what-is-parrot-)
+  * [2. Why Parrot?](#2-why-parrot-)
+    + [Install](#install)
+    + [Quickstart](#quickstart)
+    + [How to get syntactic and phrasal diversity/variety in your paraphrases using parrot?](#how-to-get-syntactic-and-phrasal-diversity-variety-in-your-paraphrases-using-parrot-)
+    + [Other Knobs](#other-knobs)
+  * [3. Scope](#3-scope)
+  * [4. What makes a paraphraser a good augmentor for NLU? (Details)](#4-what-makes-a-paraphraser-a-good-augmentor-for-nlu---details-)
+    + [Sample NLU data (Rasa format)](#sample-nlu-data--rasa-format-)
+  * [5.Dataset for paraphrase model](#5dataset-for-paraphrase-model)
+    + [Metrics and Comparison](#metrics-and-comparison)
+    + [Current Features](#current-features)
+    + [Roadmap](#roadmap)
+    + [Current Limitations/Known issues](#current-limitations-known-issues)
+    + [References](#references)
+    + [How to cite?](#how-to-cite-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## 1. What is Parrot?
 Parrot is a paraphrase based utterance augmentation framework purpose built to accelerate training NLU models. A paraphrase framework is more than just a paraphrasing model.
