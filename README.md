@@ -11,7 +11,7 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 - [2. Getting started](#2-getting-started)
   * [Install](#install)
   * [Quickstart](#quickstart)
-  * [How to get syntactic and phrasal diversity/variety in your paraphrases using parrot?](#how-to-get-syntactic-and-phrasal-diversity-variety-in-your-paraphrases-using-parrot-)
+  * [Getting syntactic and phrasal diversity/variety in your paraphrases ?](#getting-syntactic-and-phrasal-diversity-variety-in-your-paraphrases--)
   * [Other Knobs](#other-knobs)
 - [3. Scope](#3-scope)
 - [4. What makes a paraphraser a good augmentor for NLU? (Details)](#4-what-makes-a-paraphraser-a-good-augmentor-for-nlu---details-)
