@@ -19,7 +19,7 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 - [References](#references)
 - [How to cite?](#how-to-cite-)
 
-## 2. Why Parrot?
+## 1. Why Parrot?
 **Huggingface** lists [12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** lists 7 fremium and commercial paraphrasers like [QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa has discussed an experimental paraphraser for augmenting text data [here](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744), Sentence-transfomers offers a [paraphrase mining utility](https://www.sbert.net/examples/applications/paraphrase-mining/README.html) and [NLPAug](https://github.com/makcedward/nlpaug) offers word level augmentation with a [PPDB](http://paraphrase.org/#/download) (a multi-million paraphrase database). While these attempts at paraphrasing are great, there are still some gaps and paraphrasing is NOT yet a mainstream option for text augmentation in building NLU models....Parrot is a humble attempt to fill some of these gaps.
 
 **What is a good paraphrase?** Almost all conditioned text generation models are validated  on 2 factors, (1) if the generated text conveys the same meaning as the original context (Adequacy) (2) if the text is fluent / grammatically correct english (Fluency). For instance Neural Machine Translation outputs are tested for Adequacy and Fluency. But [a good paraphrase](https://www.aclweb.org/anthology/D10-1090.pdf) should be adequate and fluent while being as different as possible on the surface lexical form. With respect to this definition, the  **3 key metrics** that measures the quality of paraphrases are:
@@ -36,6 +36,7 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 
 But in general being a generative model paraphrasers doesn't guarantee to preserve the slots/entities. So the ability to generate high quality paraphrases in a constrained fashion without trading off the intents and slots for lexical dissimilarity makes a paraphraser a good augmentor. *More on this in section 3 below*
 
+## 2. Getting started
 ### Install
 ```python
 pip install git+https://github.com/PrithivirajDamodaran/Parrot.git
@@ -209,23 +210,23 @@ The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fin
  - SNIPS Alexa commands
  - MSRP Frames
 
-##  Metrics and Comparison
+##  6.Metrics and Comparison
 TBD
 
-## Current Features
+## 7.Current Features
 TBD
 
-## Roadmap
+## 8.Roadmap
 TBD
 
-## Current Limitations/Known issues
+## 9.Current Limitations/Known issues
 <ul>
  <li> The diversity scores are not normalised each of the diversity rankers scores paraphrases differently </li>
  <li> Some command style input phrases generate less adequate paraphrases</li>
 </ul>
 
-## References
+## 10.References
 TBD
 
-## How to cite?
+## 11.Citation
 TBD
