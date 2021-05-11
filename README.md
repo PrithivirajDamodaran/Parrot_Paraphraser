@@ -23,7 +23,7 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 
 But in general being a generative model paraphrasers doesn't guarantee to preserve the slots/entities. So the ability to generate high quality paraphrases in a constrained fashion without trading off the intents and slots for lexical dissimilarity makes a paraphraser a good augmentor. *More on this in section 3 below*
 
-### Installation
+### Install
 ```python
 pip install git+https://github.com/PrithivirajDamodaran/Parrot.git
 ```
