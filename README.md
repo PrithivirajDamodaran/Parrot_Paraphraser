@@ -236,7 +236,6 @@ TBD
 
 ## 11.Citation
 
-## Citation
 To cite Parrot in your work, please use the following bibtex reference:
 
 ```bibtex
