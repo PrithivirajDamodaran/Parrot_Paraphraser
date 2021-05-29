@@ -7,25 +7,25 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 <img src="images/Logo.png" width="35%" height="35%" align="right" />
 
 ## Table of contents
-- [1. Why Parrot?](#1-why-parrot-)
-- [2. Getting started](#2-getting-started)
+- [Why Parrot?](#why-parrot-)
+- [Getting started](#getting-started)
   * [Install](#install)
   * [Quickstart](#quickstart)
   * [Getting syntactic and phrasal diversity/variety in your paraphrases ?](#getting-syntactic-and-phrasal-diversity-variety-in-your-paraphrases--)
   * [Other Knobs](#other-knobs)
-- [3. Scope](#3-scope)
-- [4. What makes a paraphraser a good augmentor for NLU? (Details)](#4-what-makes-a-paraphraser-a-good-augmentor-for-nlu---details-)
+- [Scope](#scope)
+- [What makes a paraphraser a good augmentor for NLU? (Details)](#what-makes-a-paraphraser-a-good-augmentor-for-nlu---details-)
   * [Sample NLU data (Rasa format)](#sample-nlu-data--rasa-format-)
-- [5.Dataset for paraphrase model](#5dataset-for-paraphrase-model)
-- [6.Metrics and Comparison](#6metrics-and-comparison)
-- [7.Current Features](#7current-features)
-- [8.Roadmap](#8roadmap)
-- [9.Current Limitations/Known issues](#9current-limitations-known-issues)
-- [10.References](#10references)
-- [11.Citation](#11citation)
+- [Dataset for paraphrase model](#dataset-for-paraphrase-model)
+- [Metrics and Comparison](#metrics-and-comparison)
+- [Current Features](#current-features)
+- [Roadmap](#roadmap)
+- [Current Limitations/Known issues](#current-limitations-known-issues)
+- [References](#references)
+- [Citation](#citation)
 
 
-## 1. Why Parrot?
+## Why Parrot?
 **Huggingface** lists [12 paraphrase models,](https://huggingface.co/models?pipeline_tag=text2text-generation&search=paraphrase)  **RapidAPI** lists 7 fremium and commercial paraphrasers like [QuillBot](https://rapidapi.com/search/paraphrase?section=apis&page=1), Rasa has discussed an experimental paraphraser for augmenting text data [here](https://forum.rasa.com/t/paraphrasing-for-nlu-data-augmentation-experimental/27744), Sentence-transfomers offers a [paraphrase mining utility](https://www.sbert.net/examples/applications/paraphrase-mining/README.html) and [NLPAug](https://github.com/makcedward/nlpaug) offers word level augmentation with a [PPDB](http://paraphrase.org/#/download) (a multi-million paraphrase database). While these attempts at paraphrasing are great, there are still some gaps and paraphrasing is NOT yet a mainstream option for text augmentation in building NLU models....Parrot is a humble attempt to fill some of these gaps.
 
 **What is a good paraphrase?** Almost all conditioned text generation models are validated  on 2 factors, (1) if the generated text conveys the same meaning as the original context (Adequacy) (2) if the text is fluent / grammatically correct english (Fluency). For instance Neural Machine Translation outputs are tested for Adequacy and Fluency. But [a good paraphrase](https://www.aclweb.org/anthology/D10-1090.pdf) should be adequate and fluent while being as different as possible on the surface lexical form. With respect to this definition, the  **3 key metrics** that measures the quality of paraphrases are:
@@ -42,7 +42,7 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 
 But in general being a generative model paraphrasers doesn't guarantee to preserve the slots/entities. So the ability to generate high quality paraphrases in a constrained fashion without trading off the intents and slots for lexical dissimilarity makes a paraphraser a good augmentor. *More on this in section 3 below*
 
-## 2. Getting started
+## Getting started
 ### Install
 ```python
 pip install git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
@@ -146,14 +146,14 @@ Input_phrase: How are the new Macbook Pros with M1 chips?
 
 ```
 
-## 3. Scope
+## Scope
 
 In the space of conversational engines, knowledge bots are to which **we ask questions** like *"when was the Berlin wall teared down?"*, transactional bots are to which **we give commands** like *"Turn on the music please"* and voice assistants are the ones which can do both answer questions and action our commands. Parrot mainly foucses on augmenting texts typed-into or spoken-to conversational interfaces for building robust NLU models. (*So usually people neither type out or yell out long paragraphs to conversational interfaces. Hence the pre-trained model is trained  on text samples of maximum length of 32.*)
 
 *While Parrot predominantly aims to be a text augmentor for building good NLU models, it can also be used as a pure-play paraphraser.*
 
 
-## 4. What makes a paraphraser a good augmentor for NLU? (Details)
+## What makes a paraphraser a good augmentor for NLU? (Details)
 
 To enable automatic training data generation, a paraphraser needs to keep the slots in intact. So the end to end process can take input utternaces, augment and convert them into NLU training format goo et al or rasa format (as shown below). The data generation process needs to look for the same slots in the output paraphrases to derive the start and end positions.(as shown in the json below)
 
@@ -205,7 +205,7 @@ Ideally the above process needs an UI like below to collect to input utternaces 
  - **Paraphrase not-so-useful for augmenting**: what are the round trip flights between chicago and orlando for the 27th.
 
 
-## 5.Dataset for paraphrase model
+## Dataset for paraphrase model
 
 The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fine tuned on the following datasets.
 
@@ -216,25 +216,25 @@ The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fin
  - SNIPS Alexa commands
  - MSRP Frames
 
-##  6.Metrics and Comparison
+## Metrics and Comparison
 TBD
 
-## 7.Current Features
+## Current Features
 TBD
 
-## 8.Roadmap
+## Roadmap
 TBD
 
-## 9.Current Limitations/Known issues
+## Current Limitations/Known issues
 <ul>
  <li> The diversity scores are not normalised each of the diversity rankers scores paraphrases differently </li>
  <li> Some command style input phrases generate less adequate paraphrases</li>
 </ul>
 
-## 10.References
+## References
 TBD
 
-## 11.Citation
+## Citation
 
 To cite Parrot in your work, please use the following bibtex reference:
 
