@@ -217,7 +217,25 @@ The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fin
  - MSRP Frames
 
 ## Metrics and Comparison
-TBD
+
+- ATIS Dataset
+<p align="left"><img src="images/ATIS_chart.png" width="35%" height="35%"/></p>
+
+- SNIPS Dataset
+<p align="left"><img src="images/SNIPS_chart.png" width="35%" height="35%"/></p>
+
+- CLINC150 Dataset
+<p align="left"><img src="images/CLINC_chart.png" width="35%" height="35%"/></p>
+
+- Web Applications Dataset
+<p align="left"><img src="images/WA_chart.png" width="35%" height="35%"/></p>
+
+- Chatbot Dataset
+<p align="left"><img src="images/CB_chart.png" width="35%" height="35%"/></p>
+
+- Ask Ubuntu Dataset
+<p align="left"><img src="images/AU_chart.png" width="35%" height="35%"/></p>
+
 
 ## Current Features
 TBD
