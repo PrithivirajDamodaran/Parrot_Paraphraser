@@ -219,7 +219,7 @@ The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fin
 ## Metrics and Comparison
 
 - ATIS Dataset
-<p align="left"><img src="images/ATIS_chart.png" width="35%" height="35%"/></p>
+<p align="left"><img src="images/ATIS_chart.png" width="50%" height="40%"/></p>
 
 - SNIPS Dataset
 <p align="left"><img src="images/SNIPS_chart.png" width="35%" height="35%"/></p>
