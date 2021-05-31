@@ -219,6 +219,11 @@ The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fin
 
 ## Power of Augmentation - Metrics and Comparison
 
+### Intent Classification task: 
+
+Experimental setup: From each dataset different number of random utternaces per intent were taken to form the raw training data. The same data was then 
+augmented with parrot paraphraser for Nx times(where N =10 or 15 depending the dataset) to form the augmented training data. Now models are trained  on both raw data and augmented data to compare the performance. Being a multiclass classification model weighted F1 was used as a metric. We used 6 prominent NLU datasets from across domains. Below charts reveal that with a **"very modest number"** utterances and paraphrase augmentation we can achieve good classfication performance on day 1. "Very modest" varies between 4 to 6 utterances per intent in some datasets and 5 to 7 for some datasets.
+
 - ATIS Dataset
 <p align="left"><img src="images/ATIS_chart.png" width="50%" height="45%"/></p>
 
