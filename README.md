@@ -216,25 +216,25 @@ The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fin
  - SNIPS Alexa commands
  - MSRP Frames
 
-## Metrics and Comparison
+## Power of Augmentation - Metrics and Comparison
 
 - ATIS Dataset
-<p align="left"><img src="images/ATIS_chart.png" width="50%" height="40%"/></p>
+<p align="left"><img src="images/ATIS_chart.png" width="50%" height="45%"/></p>
 
 - SNIPS Dataset
-<p align="left"><img src="images/SNIPS_chart.png" width="35%" height="35%"/></p>
+<p align="left"><img src="images/SNIPS_chart.png" width="50%" height="45%"/></p>
 
 - CLINC150 Dataset
-<p align="left"><img src="images/CLINC_chart.png" width="35%" height="35%"/></p>
+<p align="left"><img src="images/CLINC_chart.png" width="50%" height="45%"/></p>
 
 - Web Applications Dataset
-<p align="left"><img src="images/WA_chart.png" width="35%" height="35%"/></p>
+<p align="left"><img src="images/WA_chart.png" width="50%" height="45%"/></p>
 
 - Chatbot Dataset
-<p align="left"><img src="images/CB_chart.png" width="35%" height="35%"/></p>
+<p align="left"><img src="images/CB_chart.png" width="50%" height="45%"/></p>
 
 - Ask Ubuntu Dataset
-<p align="left"><img src="images/AU_chart.png" width="35%" height="35%"/></p>
+<p align="left"><img src="images/AU_chart.png" width="50%" height="45%"/></p>
 
 
 ## Current Features
