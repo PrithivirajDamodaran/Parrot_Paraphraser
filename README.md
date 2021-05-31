@@ -17,12 +17,13 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 - [What makes a paraphraser a good augmentor for NLU? (Details)](#what-makes-a-paraphraser-a-good-augmentor-for-nlu---details-)
   * [Sample NLU data (Rasa format)](#sample-nlu-data--rasa-format-)
 - [Dataset for paraphrase model](#dataset-for-paraphrase-model)
-- [Metrics and Comparison](#metrics-and-comparison)
+- [Power of Augmentation - Metrics and Comparison](#power-of-augmentation---metrics-and-comparison)
 - [Current Features](#current-features)
 - [Roadmap](#roadmap)
 - [Current Limitations/Known issues](#current-limitations-known-issues)
 - [References](#references)
 - [Citation](#citation)
+
 
 
 ## Why Parrot?
