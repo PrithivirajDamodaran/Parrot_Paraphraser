@@ -138,7 +138,7 @@ Input_phrase: How are the new Macbook Pros with M1 chips?
 ```python
 
  para_phrases = parrot.augment(input_phrase=phrase,
-                               use_gpu=False
+                               use_gpu=False,
                                diversity_ranker="levenshtein",
                                do_diverse=False, 
                                max_return_phrases = 10, 
