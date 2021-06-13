@@ -63,9 +63,9 @@ class Parrot():
 
          
 
-      adequacy_filtered_phrases = self.adequacy_score.filter(input_phrase, paraphrases, adequacy_threshold)
+      adequacy_filtered_phrases = self.adequacy_score.filter(input_phrase, paraphrases, adequacy_threshold, self.device )
       if len(adequacy_filtered_phrases) > 0 :
-        fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold)
+        fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold, self.device )
         if len(fluency_filtered_phrases) > 0 :
             diversity_scored_phrases = self.diversity_score.rank(input_phrase, fluency_filtered_phrases, diversity_ranker)
             para_phrases = []
@@ -121,9 +121,9 @@ class Parrot():
         paraphrases.add(gen_pp)
 
 
-      adequacy_filtered_phrases = self.adequacy_score.filter(input_phrase, paraphrases, adequacy_threshold)
+      adequacy_filtered_phrases = self.adequacy_score.filter(input_phrase, paraphrases, adequacy_threshold, self.device )
       if len(adequacy_filtered_phrases) > 0 :
-        fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold)
+        fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold, self.device )
         if len(fluency_filtered_phrases) > 0 :
             diversity_scored_phrases = self.diversity_score.rank(input_phrase, fluency_filtered_phrases, diversity_ranker)
             para_phrases = []
