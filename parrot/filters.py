@@ -51,7 +51,7 @@ class Fluency():
         input_ids = self.cola_tokenizer("Sentence: " + para_phrase, return_tensors='pt', truncation=True)
         input_ids = input_ids.to(device)
         prediction = self.cola_model(**input_ids)
-        scores = prediction[0][0].detach().numpy()
+        scores = prediction[0][0].detach().cpu().numpy()
         scores = softmax(scores)
         fluency_score = scores[1] # LABEL_0 = Bad Fluency, LABEL_1 = Good Fluency
         if fluency_score >= fluency_threshold:
@@ -67,7 +67,7 @@ class Fluency():
         input_ids = self.cola_tokenizer("Sentence: " + para_phrase, return_tensors='pt', truncation=True)
         input_ids = input_ids.to(device)
         prediction = self.cola_model(**input_ids)
-        scores = prediction[0][0].detach().numpy()
+        scores = prediction[0][0].detach().cpu().numpy()
         scores = softmax(scores)
         fluency_score = scores[1] # LABEL_0 = Bad Fluency, LABEL_1 = Good Fluency
         if fluency_score >= fluency_threshold:
