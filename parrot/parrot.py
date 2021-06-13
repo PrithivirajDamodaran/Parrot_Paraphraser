@@ -9,18 +9,17 @@ class Parrot():
     from parrot.filters import Diversity
     self.tokenizer = AutoTokenizer.from_pretrained(model_tag)
     self.model     = AutoModelForSeq2SeqLM.from_pretrained(model_tag)
-    if use_gpu:
-        device= "cuda:0"
-    else:
-        device = "cpu"
-
-    self.device    = device
-    self.model     = self.model.to(device)
     self.adequacy_score = Adequacy()
     self.fluency_score  = Fluency()
     self.diversity_score= Diversity()
 
-  def rephrase(self, input_phrase, diversity_ranker="levenshtein", do_diverse=False, style=1, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
+  def rephrase(self, input_phrase, use_gpu=False, diversity_ranker="levenshtein", do_diverse=False, style=1, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
+      if use_gpu:
+        device= "cuda:0"
+      else:
+        device = "cpu"
+
+      self.model     = self.model.to(device)
       import re
       save_phrase = input_phrase
       if len(input_phrase) >= max_length:
@@ -63,9 +62,9 @@ class Parrot():
 
          
 
-      adequacy_filtered_phrases = self.adequacy_score.filter(input_phrase, paraphrases, adequacy_threshold, self.device )
+      adequacy_filtered_phrases = self.adequacy_score.filter(input_phrase, paraphrases, adequacy_threshold, device )
       if len(adequacy_filtered_phrases) > 0 :
-        fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold, self.device )
+        fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold, device )
         if len(fluency_filtered_phrases) > 0 :
             diversity_scored_phrases = self.diversity_score.rank(input_phrase, fluency_filtered_phrases, diversity_ranker)
             para_phrases = []
@@ -76,7 +75,14 @@ class Parrot():
         else:
             return [(save_phrase,0)]
 
-  def augment(self, input_phrase, diversity_ranker="levenshtein", do_diverse=False, max_return_phrases = 10, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
+  def augment(self, input_phrase, use_gpu=False, diversity_ranker="levenshtein", do_diverse=False, max_return_phrases = 10, max_length=32, adequacy_threshold = 0.90, fluency_threshold = 0.90):
+      if use_gpu:
+        device= "cuda:0"
+      else:
+        device = "cpu"
+
+      self.model     = self.model.to(device)
+
       import re
 
       save_phrase = input_phrase
@@ -121,9 +127,9 @@ class Parrot():
         paraphrases.add(gen_pp)
 
 
-      adequacy_filtered_phrases = self.adequacy_score.filter(input_phrase, paraphrases, adequacy_threshold, self.device )
+      adequacy_filtered_phrases = self.adequacy_score.filter(input_phrase, paraphrases, adequacy_threshold, device )
       if len(adequacy_filtered_phrases) > 0 :
-        fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold, self.device )
+        fluency_filtered_phrases = self.fluency_score.filter(adequacy_filtered_phrases, fluency_threshold, device )
         if len(fluency_filtered_phrases) > 0 :
             diversity_scored_phrases = self.diversity_score.rank(input_phrase, fluency_filtered_phrases, diversity_ranker)
             para_phrases = []
