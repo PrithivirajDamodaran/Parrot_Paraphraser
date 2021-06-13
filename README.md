@@ -69,7 +69,7 @@ random_state(1234)
 '''
 
 #Init models (make sure you init ONLY once if you integrate this to your code)
-parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5", use_gpu=False)
+parrot = Parrot(model_tag="prithivida/parrot_paraphraser_on_T5")
 
 phrases = ["Can you recommed some upscale restaurants in Newyork?",
            "What are the famous places we should not miss in Russia?"
@@ -79,7 +79,7 @@ for phrase in phrases:
   print("-"*100)
   print("Input_phrase: ", phrase)
   print("-"*100)
-  para_phrases = parrot.augment(input_phrase=phrase)
+  para_phrases = parrot.augment(input_phrase=phrase, use_gpu=False)
   for para_phrase in para_phrases:
    print(para_phrase)
 ```
@@ -137,7 +137,8 @@ Input_phrase: How are the new Macbook Pros with M1 chips?
 ### Other Knobs
 ```python
 
- para_phrases = parrot.augment(input_phrase=phrase, 
+ para_phrases = parrot.augment(input_phrase=phrase,
+                               use_gpu=False
                                diversity_ranker="levenshtein",
                                do_diverse=False, 
                                max_return_phrases = 10, 
