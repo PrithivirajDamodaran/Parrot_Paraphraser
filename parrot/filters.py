@@ -9,6 +9,7 @@ class Adequacy():
       top_adequacy_phrases = []
       for para_phrase in para_phrases:
         x = self.tokenizer.encode(input_phrase, para_phrase, return_tensors='pt',truncation_strategy='only_first')
+        self.nli_model = self.nli_model.to(device)
         logits = self.nli_model(x.to(device))[0]
         # we throw away "neutral" (dim 1) and take the probability of "entailment" (2) as the adequacy score
         entail_contradiction_logits = logits[:,[0,2]]
@@ -24,6 +25,7 @@ class Adequacy():
       adequacy_scores = {}
       for para_phrase in para_phrases:
         x = self.tokenizer.encode(input_phrase, para_phrase, return_tensors='pt',truncation_strategy='only_first')
+        self.nli_model = self.nli_model.to(device)
         logits = self.nli_model(x.to(device))[0]
         # we throw away "neutral" (dim 1) and take the probability of "entailment" (2) as the adequacy score
         entail_contradiction_logits = logits[:,[0,2]]
@@ -43,6 +45,7 @@ class Fluency():
   def filter(self, para_phrases, fluency_threshold, device="cpu"):
       import numpy as np
       from scipy.special import softmax
+      self.cola_model = self.cola_model.to(device)
       top_fluent_phrases = []
       for para_phrase in para_phrases:
         input_ids = self.cola_tokenizer("Sentence: " + para_phrase, return_tensors='pt', truncation=True)
@@ -58,6 +61,7 @@ class Fluency():
   def score(self, para_phrases, fluency_threshold, device="cpu"):
       import numpy as np
       from scipy.special import softmax
+      self.cola_model = self.cola_model.to(device)
       fluency_scores = {}
       for para_phrase in para_phrases:
         input_ids = self.cola_tokenizer("Sentence: " + para_phrase, return_tensors='pt', truncation=True)
@@ -74,7 +78,7 @@ class Fluency():
 
 class Diversity():
 
-  def __init__(self, model_tag='paraphrase-distilroberta-base-v1'):
+  def __init__(self, model_tag='paraphrase-distilroberta-base-v2'):
     from sentence_transformers import SentenceTransformer
     self.diversity_model = SentenceTransformer(model_tag)
 
@@ -114,15 +118,9 @@ class Diversity():
       return  diversity_scores
 
   def levenshtein_ranker(self, input_phrase, para_phrases):
-      import pandas as pd
-      from sklearn_pandas import DataFrameMapper
-      from sklearn.preprocessing import MinMaxScaler
       import Levenshtein
-
       diversity_scores = {}
-      input_enc = self.diversity_model.encode(input_phrase.lower())
       for para_phrase in para_phrases:              
-          paraphrase_enc = self.diversity_model.encode(para_phrase.lower())
           distance = Levenshtein.distance(input_phrase.lower(), para_phrase)
           diversity_scores[para_phrase] =  distance
       return diversity_scores
