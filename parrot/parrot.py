@@ -27,7 +27,7 @@ class Parrot():
       input_phrase = re.sub('[^a-zA-Z0-9 \?\'\-\/\:\.]', '', input_phrase)
       input_phrase = "paraphrase: " + input_phrase
       input_ids = self.tokenizer.encode(input_phrase, return_tensors='pt')
-      input_ids = input_ids.to(self.device)
+      input_ids = input_ids.to(device)
       max_return_phrases = 10
       if do_diverse:
         for n in range(2, 9):
@@ -92,7 +92,7 @@ class Parrot():
       input_phrase = re.sub('[^a-zA-Z0-9 \?\'\-\/\:\.]', '', input_phrase)
       input_phrase = "paraphrase: " + input_phrase
       input_ids = self.tokenizer.encode(input_phrase, return_tensors='pt')
-      input_ids = input_ids.to(self.device)
+      input_ids = input_ids.to(device)
 
       if do_diverse:
         for n in range(2, 9):
