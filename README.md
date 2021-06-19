@@ -16,7 +16,6 @@ Parrot is a paraphrase based utterance augmentation framework purpose built to a
 - [Scope](#scope)
 - [What makes a paraphraser a good augmentor for NLU? (Details)](#what-makes-a-paraphraser-a-good-augmentor-for-nlu---details-)
   * [Sample NLU data (Rasa format)](#sample-nlu-data--rasa-format-)
-- [Dataset for paraphrase model](#dataset-for-paraphrase-model)
 - [Power of Augmentation - Metrics and Comparison](#power-of-augmentation---metrics-and-comparison)
 - [Current Features](#current-features)
 - [Roadmap](#roadmap)
@@ -206,17 +205,6 @@ Ideally the above process needs an UI like below to collect to input utternaces 
  - **Paraphrase useful for augmenting**: what are the round trip flights between indianapolis and orlando for the 27th
  - **Paraphrase not-so-useful for augmenting**: what are the round trip flights between chicago and orlando for the 27th.
 
-
-## Dataset for paraphrase model
-
-The paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fine tuned on the following datasets.
-
- - MSRP Paraphrase 
- - Google PAWS 
- - ParaNMT 
- - Quora question pairs. 
- - SNIPS Alexa commands
- - MSRP Frames
 
 ## Power of Augmentation - Metrics and Comparison
 
