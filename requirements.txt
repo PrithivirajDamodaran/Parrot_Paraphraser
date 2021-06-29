@@ -1,0 +1,6 @@
+transformers 
+sentencepiece
+python-Levenshtein 
+fuzzywuzzy
+sentence-transformers
+
