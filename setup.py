@@ -5,7 +5,7 @@ setuptools.setup(
     name="parrot",
     version="1.0",
     author="prithiviraj damodaran",
-    author_email="d.prithiviraj@gmail.com",
+    author_email="",
     description="Parrot paraphraser",
     long_description="Parrot paraphraser",
     url="https://github.com/PrithivirajDamodaran/Parrot.git",
