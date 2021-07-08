@@ -205,6 +205,15 @@ Ideally the above process needs an UI like below to collect to input utternaces 
  - **Paraphrase useful for augmenting**: what are the round trip flights between indianapolis and orlando for the 27th
  - **Paraphrase not-so-useful for augmenting**: what are the round trip flights between chicago and orlando for the 27th.
 
+## Dataset for paraphrase model
+THe following datasets where analysed, but the paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fine-tuned on some of them
+
+- [MSRP Paraphrase](https://github.com/wasiahmad/paraphrase_identification)
+- [Google PAWS](https://github.com/google-research-datasets/paws)
+- [ParaNMT](https://github.com/jwieting/para-nmt-50m#readme)
+- [Quora question pairs.](https://data.world/socialmediadata/quora-question-pairs)
+- [SNIPS commands](https://github.com/sz128/slot_filling_and_intent_detection_of_SLU)
+- [MSRP Frames](https://www.microsoft.com/en-us/research/project/frames-dataset/)
 
 ## Power of Augmentation - Metrics and Comparison
 
