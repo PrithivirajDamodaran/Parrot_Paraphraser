@@ -1,17 +1,16 @@
 class Adequacy():
   
-  def __init__(self, model_tag='prithivida/parrot_adequacy_on_BART'):
+  def __init__(self, model_tag='prithivida/parrot_adequacy_model'):
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
-    self.nli_model = AutoModelForSequenceClassification.from_pretrained(model_tag)
+    self.adequacy_model = AutoModelForSequenceClassification.from_pretrained(model_tag)
     self.tokenizer = AutoTokenizer.from_pretrained(model_tag)
 
   def filter(self, input_phrase, para_phrases, adequacy_threshold, device="cpu"):
       top_adequacy_phrases = []
       for para_phrase in para_phrases:
         x = self.tokenizer.encode(input_phrase, para_phrase, return_tensors='pt',truncation_strategy='only_first')
-        self.nli_model = self.nli_model.to(device)
-        logits = self.nli_model(x.to(device))[0]
-        # we throw away "neutral" (dim 1) and take the probability of "entailment" (2) as the adequacy score
+        self.adequacy_model = self.adequacy_model.to(device)
+        logits = self.adequacy_model(x.to(device))[0]
         entail_contradiction_logits = logits[:,[0,2]]
         probs = entail_contradiction_logits.softmax(dim=1)
         prob_label_is_true = probs[:,1]
@@ -25,9 +24,8 @@ class Adequacy():
       adequacy_scores = {}
       for para_phrase in para_phrases:
         x = self.tokenizer.encode(input_phrase, para_phrase, return_tensors='pt',truncation_strategy='only_first')
-        self.nli_model = self.nli_model.to(device)
-        logits = self.nli_model(x.to(device))[0]
-        # we throw away "neutral" (dim 1) and take the probability of "entailment" (2) as the adequacy score
+        self.adequacy_model = self.adequacy_model.to(device)
+        logits = self.adequacy_model(x.to(device))[0]
         entail_contradiction_logits = logits[:,[0,2]]
         probs = entail_contradiction_logits.softmax(dim=1)
         prob_label_is_true = probs[:,1]
@@ -37,20 +35,20 @@ class Adequacy():
       return adequacy_scores
 
 class Fluency():
-  def __init__(self, model_tag='prithivida/parrot_fluency_on_BERT'):
+  def __init__(self, model_tag='prithivida/parrot_fluency_model'):
     from transformers import AutoModelForSequenceClassification, AutoTokenizer
-    self.cola_model = AutoModelForSequenceClassification.from_pretrained(model_tag, num_labels=2)
-    self.cola_tokenizer = AutoTokenizer.from_pretrained(model_tag)
+    self.fluency_model = AutoModelForSequenceClassification.from_pretrained(model_tag, num_labels=2)
+    self.fluency_tokenizer = AutoTokenizer.from_pretrained(model_tag)
 
   def filter(self, para_phrases, fluency_threshold, device="cpu"):
       import numpy as np
       from scipy.special import softmax
-      self.cola_model = self.cola_model.to(device)
+      self.fluency_model = self.fluency_model.to(device)
       top_fluent_phrases = []
       for para_phrase in para_phrases:
-        input_ids = self.cola_tokenizer("Sentence: " + para_phrase, return_tensors='pt', truncation=True)
+        input_ids = self.fluency_tokenizer("Sentence: " + para_phrase, return_tensors='pt', truncation=True)
         input_ids = input_ids.to(device)
-        prediction = self.cola_model(**input_ids)
+        prediction = self.fluency_model(**input_ids)
         scores = prediction[0][0].detach().cpu().numpy()
         scores = softmax(scores)
         fluency_score = scores[1] # LABEL_0 = Bad Fluency, LABEL_1 = Good Fluency
@@ -61,12 +59,12 @@ class Fluency():
   def score(self, para_phrases, fluency_threshold, device="cpu"):
       import numpy as np
       from scipy.special import softmax
-      self.cola_model = self.cola_model.to(device)
+      self.fluency_model = self.fluency_model.to(device)
       fluency_scores = {}
       for para_phrase in para_phrases:
-        input_ids = self.cola_tokenizer("Sentence: " + para_phrase, return_tensors='pt', truncation=True)
+        input_ids = self.fluency_tokenizer("Sentence: " + para_phrase, return_tensors='pt', truncation=True)
         input_ids = input_ids.to(device)
-        prediction = self.cola_model(**input_ids)
+        prediction = self.fluency_model(**input_ids)
         scores = prediction[0][0].detach().cpu().numpy()
         scores = softmax(scores)
         fluency_score = scores[1] # LABEL_0 = Bad Fluency, LABEL_1 = Good Fluency
