@@ -11,8 +11,8 @@ class Adequacy():
         x = self.tokenizer.encode(input_phrase, para_phrase, return_tensors='pt',truncation_strategy='only_first')
         self.adequacy_model = self.adequacy_model.to(device)
         logits = self.adequacy_model(x.to(device))[0]
-        entail_contradiction_logits = logits[:,[0,2]]
-        probs = entail_contradiction_logits.softmax(dim=1)
+        logits = logits[:,[0,2]]
+        probs = logits.softmax(dim=1)
         prob_label_is_true = probs[:,1]
         adequacy_score = prob_label_is_true[0].item()
         if adequacy_score >= adequacy_threshold:
@@ -26,8 +26,8 @@ class Adequacy():
         x = self.tokenizer.encode(input_phrase, para_phrase, return_tensors='pt',truncation_strategy='only_first')
         self.adequacy_model = self.adequacy_model.to(device)
         logits = self.adequacy_model(x.to(device))[0]
-        entail_contradiction_logits = logits[:,[0,2]]
-        probs = entail_contradiction_logits.softmax(dim=1)
+        logits = logits[:,[0,2]]
+        probs = logits.softmax(dim=1)
         prob_label_is_true = probs[:,1]
         adequacy_score = prob_label_is_true[0].item()
         if adequacy_score >= adequacy_threshold:
