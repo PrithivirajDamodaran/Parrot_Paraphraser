@@ -15,7 +15,8 @@ for phrase in phrases:
                                 max_length=32, 
                                 adequacy_threshold = 0.99, 
                                 fluency_threshold = 0.90)
-  print(para_phrases)                                   
+  for paraphrase in para_phrases:                                  
+      print(paraphrase)                               
 
  
   
