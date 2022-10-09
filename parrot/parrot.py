@@ -7,8 +7,8 @@ class Parrot():
     from parrot.filters import Adequacy
     from parrot.filters import Fluency
     from parrot.filters import Diversity
-    self.tokenizer = AutoTokenizer.from_pretrained(model_tag)
-    self.model     = AutoModelForSeq2SeqLM.from_pretrained(model_tag)
+    self.tokenizer = AutoTokenizer.from_pretrained(model_tag, use_auth_token=True)
+    self.model     = AutoModelForSeq2SeqLM.from_pretrained(model_tag, use_auth_token=True)
     self.adequacy_score = Adequacy()
     self.fluency_score  = Fluency()
     self.diversity_score= Diversity()
