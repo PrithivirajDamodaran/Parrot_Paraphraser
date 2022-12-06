@@ -48,14 +48,13 @@ But in general being a generative model paraphrasers doesn't guarantee to preser
 pip install git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
 ```
 
-```python
+~~```python
 [IMPORTANT]
 If you are using in notebook, use the below line to login:
        from huggingface_hub import notebook_login
        notebook_login()
 else use:
-       huggingface-cli login
-```
+       huggingface-cli login```~~
 
 ### Quickstart
 ```python
