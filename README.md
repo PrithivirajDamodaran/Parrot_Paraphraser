@@ -209,7 +209,7 @@ Ideally the above process needs an UI like below to collect to input utterances 
  - **Paraphrase not-so-useful for augmenting**: what are the round trip flights between chicago and orlando for the 27th.
 
 ## Dataset for paraphrase model
-THe following datasets where analysed, but the paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fine-tuned on some of them
+The following datasets where analysed, but the paraphrase generation model prithivida/parrot_paraphraser_on_T5 has been fine-tuned on some of them
 
 - [MSRP Paraphrase](https://github.com/wasiahmad/paraphrase_identification)
 - [Google PAWS](https://github.com/google-research-datasets/paws)
