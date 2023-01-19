@@ -159,11 +159,11 @@ In the space of conversational engines, knowledge bots are to which **we ask que
 
 ## What makes a paraphraser a good augmentor for NLU? (Details)
 
-To enable automatic training data generation, a paraphraser needs to keep the slots in intact. So the end to end process can take input utternaces, augment and convert them into NLU training format goo et al or rasa format (as shown below). The data generation process needs to look for the same slots in the output paraphrases to derive the start and end positions.(as shown in the json below)
+To enable automatic training data generation, a paraphraser needs to keep the slots in intact. So the end to end process can take input utterances, augment and convert them into NLU training format goo et al or rasa format (as shown below). The data generation process needs to look for the same slots in the output paraphrases to derive the start and end positions.(as shown in the json below)
 
 <img src="./images/NLU Flow.png" alt="" title="" width="550" height="100" /> 
 
-Ideally the above process needs an UI like below to collect to input utternaces along with annotations (Intents, Slots and slot types) which then can be agumented and converted to training data.
+Ideally the above process needs an UI like below to collect to input utterances along with annotations (Intents, Slots and slot types) which then can be agumented and converted to training data.
 
 <img src="./images/Augmentor UI.png" alt="" title="" width="550" height="100" /> 
 
@@ -222,7 +222,7 @@ THe following datasets where analysed, but the paraphrase generation model prith
 
 ### Intent Classification task: 
 
-Experimental setup: From each dataset increasing number of random utternaces per intent were taken to form the raw training data. The same data was then 
+Experimental setup: From each dataset increasing number of random utterances per intent were taken to form the raw training data. The same data was then 
 augmented with parrot paraphraser for Nx times(where N =10 or 15 depending the dataset) to form the augmented training data. Now models are trained on both raw data and augmented data to compare the performance. Being a multiclass classification model weighted F1 was used as a metric. The experiment was repeated 4 times for each number of utterance and F1 has been averaged to remove randomness in the trend. I have used 6 prominent NLU datasets from across domains. Below charts reveal that with a **"very modest number"** utterances and paraphrase augmentation we can achieve good classfication performance on day 1. "Very modest" varies between 4 to 6 utterances per intent in some datasets and 5 to 7 for some datasets.
 
 <p align="left"><img src="images/ATIS_chart.png" width="70%" height="65%"/></p>
