@@ -48,7 +48,7 @@ But in general being a generative model paraphrasers doesn't guarantee to preser
 pip install git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
 ```
 
-[**Trying to install for AMD GPUs?**](README.md#installation-for-amd-gpus)
+[*Trying to install for AMD GPUs?*](README.md#installation-for-amd-gpus)
 
 ### Demo notebook
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1oHwF5sXxLGH8i6M0YGwGP0RstwZQDuGW?usp=sharing) Demo notebook
