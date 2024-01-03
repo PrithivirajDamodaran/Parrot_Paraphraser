@@ -56,7 +56,7 @@ Install the dependencies:
 ```sh
 git clone https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
 cd Parrot_Paraphraser
-pip install -r requirements-amd.txt
+pip install -r requirements-rocm.txt
 ```
 
 After the installation is finished, you can verify your installation by running the following:
