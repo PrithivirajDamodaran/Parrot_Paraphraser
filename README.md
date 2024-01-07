@@ -48,6 +48,8 @@ But in general being a generative model paraphrasers doesn't guarantee to preser
 pip install git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
 ```
 
+[*Trying to install for AMD GPUs?*](README.md#installation-for-amd-gpus)
+
 ### Demo notebook
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1oHwF5sXxLGH8i6M0YGwGP0RstwZQDuGW?usp=sharing) Demo notebook
 
@@ -246,6 +248,32 @@ TBD
  <li> The diversity scores are not normalised each of the diversity rankers scores paraphrases differently </li>
  <li> Some command style input phrases generate less adequate paraphrases</li>
 </ul>
+
+## Installation for AMD GPUs
+
+If you're using an AMD GPU and want to use the AMD ROCm Platform, follow the steps below. Note that as of writing, ROCm is only available for Linux users! The steps are tested and verified on Ubuntu 22.04 using a Radeon RX 6650 XT GPU.
+
+Install the dependencies:
+```sh
+git clone https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
+cd Parrot_Paraphraser
+pip install -r requirements-rocm.txt
+```
+
+After the installation is finished, you can verify your installation by running the following:
+
+```sh
+python3 -c 'import torch; print(torch.cuda.is_available())' # should print 'True'
+```
+
+If the output of the above command is `False`, you can try "fooling" the ROCm driver by setting the environment variable `HSA_OVERRIDE_GFX_VERSION` (as per  [this issue](https://github.com/ROCm/ROCm/issues/1698)):
+
+```sh
+HSA_OVERRIDE_GFX_VERSION=10.3.0 python3 -c 'import torch; print(torch.cuda.is_available())' # should print 'True'
+# OR 
+export HSA_OVERRIDE_GFX_VERSION=10.3.0
+python3 -c 'import torch; print(torch.cuda.is_available())' # should print 'True'
+```
 
 ## References
 TBD
